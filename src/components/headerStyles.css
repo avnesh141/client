@@ -1,0 +1,19 @@
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: darkslategray;
+    padding: 10px 20px;
+    color: white;
+}
+#nav_list a{
+    color: white;
+}
+#main_logo_andname {
+    display: flex;
+    align-items: center;
+}
+#nav_list_div {
+    display: flex;
+    align-items: center;
+}
