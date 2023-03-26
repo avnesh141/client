@@ -1,10 +1,9 @@
-import './App.css';
 import Section from './Components/Section/Section.jsx'
-import Navbar from './Components/Navbar/Navbar.jsx'
+import Header from './Components/Navbar/Header.jsx'
 function App() {
   return (
     <div>
-      <Navbar />
+      <Header />
       <Section />
     </div>
   );
