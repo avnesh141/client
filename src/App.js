@@ -1,16 +1,13 @@
-import React from 'react'
-import Header from './components/Header/Header'
-// import Login from './components/Login_page/Login_page'
-// import Signup from'./components/Signup/Signup'
-const App = () => {
+
+import Section from './Components/Section/Section.jsx'
+import Header from './Components/Navbar/Header.jsx'
+function App() {
   return (
     <div>
-      <Header/>
-      {/* <Login/> */}
-      {/* <Signup/> */}
-
+      <Header />
+      <Section />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
