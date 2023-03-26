@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Bonds() {
+function MutualFunds() {
   return (
     <div>
-      
+      YO
     </div>
   )
 }
 
-export default Bonds
+export default MutualFunds
