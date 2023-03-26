@@ -37,50 +37,36 @@ nav {
     padding-left: 10px;
 }
 
-/* #searchbox {
-    width: 116%;
+#searchbox {
     height: 2.4rem;
     border-radius: 20px;
-    position: relative;
-    left: 260%;
-    right: 10px;
-} */
-
-/* #loginsignup {
-    display: flex;
-    justify-content: center;
-    width: 15rem;
-} */
-
-/* #logins {
-    position: absolute;
-    right: 3%;
-} */
-
-/* #logins a:hover {
-    background-color: rgb(95, 204, 168);
-    color: rgb(58, 58, 58);
+    margin-right: 2%;
 }
 
-#logins a {
+#login a {
+    font-size: 1.3rem;
     color: white;
     text-decoration: none;
-} */
-
-/* #login {
-    width: 10rem;
-    font-size: 1.4rem;
-    padding: 3px 13px;
+}
+#signup a {
+    font-size: 1.3rem;
+    color: white;
+    text-decoration: none;
+}
+#login {
+    padding:1.2% 4% 1.2% 4%; 
+    margin-left: 3%;
+    margin-right: 3%;
     border: 2px solid white;
-    border: 2px solid rgb(63, 226, 134);
-    border-radius: 8px;
-} */
-
-/* #signup {
-    width: 10rem;
-    margin-left: 20px;
-    font-size: 1.4rem;
-    padding: 3px 13px;
+    border-radius: 12px;
+}
+#signup {
+    padding:1.2% 4% 1.2% 4%; 
+    margin-left: 3%;
+    margin-right: 3%;
     border: 2px solid white;
-    border-radius: 8px;
-} */
+    border-radius: 12px;
+}
+
+
+
