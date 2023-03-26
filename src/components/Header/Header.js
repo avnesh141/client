@@ -1,5 +1,5 @@
 import React from 'react'
-import './headerStyles.css'
+import './Header.css'
 
 const header = () => {
   return (
@@ -16,12 +16,16 @@ const header = () => {
             <li><a class="nav_items" href="index.html">About Us</a></li>
           </ul>
         </div>
-        <div>
-          <input id="searchbox" type="text" placeholder='Search for stocks...' />
-        </div>
-        <div id="logins">
-          <a id='login' href="index.html">Login</a>
-          <a id='signup' href="index.html">Signup</a>
+        <div style={{ display: "flex",alignItems:"center",width:"27%"}}>
+          <div>
+            <input id="searchbox" type="text" placeholder='Search for stocks...' />
+          </div>
+          <div id="login">
+            <a href="index.html">Login</a>
+          </div>
+          <div id="signup">
+            <a href="index.html">Signup</a>
+          </div>
         </div>
       </nav>
     </div>

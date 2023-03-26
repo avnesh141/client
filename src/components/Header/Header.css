@@ -1,12 +1,13 @@
 nav {
     display: flex;
     align-items: center;
-    /* justify-content: space-between; */
+    justify-content: space-between;
     background-color: rgb(58, 58, 58);
     padding: 10px 20px;
     color: white;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0, 0.06);
     font-family: 'Kanit', sans-serif;
+    width: 100vw;
 }
 
 #nav_list {
@@ -36,26 +37,27 @@ nav {
     padding-left: 10px;
 }
 
-#searchbox {
+/* #searchbox {
     width: 116%;
     height: 2.4rem;
     border-radius: 20px;
     position: relative;
     left: 260%;
-}
+    right: 10px;
+} */
 
-#loginsignup {
+/* #loginsignup {
     display: flex;
     justify-content: center;
     width: 15rem;
-}
+} */
 
-#logins {
+/* #logins {
     position: absolute;
     right: 3%;
-}
+} */
 
-#logins a:hover {
+/* #logins a:hover {
     background-color: rgb(95, 204, 168);
     color: rgb(58, 58, 58);
 }
@@ -63,22 +65,22 @@ nav {
 #logins a {
     color: white;
     text-decoration: none;
-}
+} */
 
-#login {
+/* #login {
     width: 10rem;
     font-size: 1.4rem;
     padding: 3px 13px;
     border: 2px solid white;
-    /* border: 2px solid rgb(63, 226, 134); */
+    border: 2px solid rgb(63, 226, 134);
     border-radius: 8px;
-}
+} */
 
-#signup {
+/* #signup {
     width: 10rem;
     margin-left: 20px;
     font-size: 1.4rem;
     padding: 3px 13px;
     border: 2px solid white;
     border-radius: 8px;
-}
+} */
