@@ -1,4 +1,12 @@
+.navbar{
+    padding: 0;
+    margin: 0;
+}
+
 nav {
+    z-index: 2;
+    position: fixed;
+    top: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;

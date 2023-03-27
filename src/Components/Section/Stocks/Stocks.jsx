@@ -1,5 +1,6 @@
 import React from 'react'
 import './Stocks.css'
+import Chart from './Chart.jsx'
 function Stocks() {
     return (
         <div className='stocks-page'>
@@ -10,23 +11,23 @@ function Stocks() {
                         <h5 className='indexHead'>NIFTY50</h5>
                         <div className='pricesbox'>
                             <div className='prices'>16969</div>
-                            <div className='changes'></div>
+                            <div className='changes' style={{color:'green'}}>+40.59</div>
                         </div>
                     </div>
 
                     <div className='indexCard'>
                         <h5 className='indexHead'>SENSEX</h5>
                         <div className='pricesbox'>
-                            <div className='prices'></div>
-                            <div className='changes'></div>
+                            <div className='prices'>856565</div>
+                            <div className='changes' style={{color:'green'}}>+50.2</div>
                         </div>
                     </div>
 
                     <div className='indexCard'>
                         <h5 className='indexHead'>BANKNIFTY</h5>
                         <div className='pricesbox'>
-                            <div className='prices'></div>
-                            <div className='changes'></div>
+                            <div className='prices'>87756</div>
+                            <div className='changes' style={{color:'red'}}>-53.2</div>
                         </div>
                     </div>
                 </div>
@@ -125,6 +126,8 @@ function Stocks() {
                     </div>
                 </div>
             </div>
+
+            <Chart/>
         </div>
     )
 }

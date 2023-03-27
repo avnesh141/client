@@ -20,16 +20,19 @@ div {
 }
 
 .indexCard {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
   background: rgb(243, 242, 242);
   border-radius: 5px;
-  height: 12vh;
+  height: 125px;
   width: 30%;
   padding: 10px;
   box-shadow: 1px 1px 10px 1px rgb(196, 195, 195);
 }
 
 .heading {
-  margin: 20px 0;
+  padding: 20px 0;
 }
 
 .gainersList {
@@ -61,6 +64,10 @@ div {
   justify-content: space-around;
   align-items: center;
   height: 100%;
+}
+
+.candlestick-chart{
+  margin: 5% 0;
 }
 
 -webkit-scrollbar {
