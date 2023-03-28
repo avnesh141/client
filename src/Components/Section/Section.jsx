@@ -12,8 +12,8 @@ function Section() {
     console.log(e.target.id);
   }
   return (
-    <div className='container'>
-      <div class="parallax"></div>
+    <div className='scontainer'>
+      <div className="parallax"></div>
       <div className='box'>
       <section className='section-container'>
         
@@ -23,13 +23,13 @@ function Section() {
           <h3 id="1" className='option' onClick={optionsClicked}>Mutual Funds</h3>
           <h3 id="2" className='option' onClick={optionsClicked}>Bonds</h3>
         </div>
-        {(active == 0) &&
+        {(active === "0") &&
           <Stocks />}
         {
-          (active==1)&& <MutualFunds />
+          (active==="1")&& <MutualFunds />
         }
         {
-          (active==2)&&<Bonds />
+          (active==="2")&&<Bonds />
         }
       </section>
       </div>

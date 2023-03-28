@@ -1,5 +1,5 @@
-.container{
-    width: 100vw;
+.scontainer{
+    width: 90vw;
     margin: auto;
     
 }
@@ -20,10 +20,6 @@
 }
 
 
-/* .option:hover{
-    border-bottom: solid 5px black;
-    
-} */
 
 
 .option:after {

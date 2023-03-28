@@ -13,11 +13,11 @@ function App() {
                 <div className="footer-container">
                     <div className="left-col">
                         <div className="social-media">
-                            <a href="#"><img src={Facebook} alt="facebook" /></a>
-                            <a href="#"><img src={Twitter} alt="twitter" /></a>
-                            <a href="#"><img src={Insta} alt="insta" /></a>
-                            <a href="#"><img src={Youtube} alt="youtube" /></a>
-                            <a href="#"><img src={Linkedin} alt="linkedin" /></a>
+                            <a href="/"><img src={Facebook} alt="facebook" /></a>
+                            <a href="/"><img src={Twitter} alt="twitter" /></a>
+                            <a href="/"><img src={Insta} alt="insta" /></a>
+                            <a href="/"><img src={Youtube} alt="youtube" /></a>
+                            <a href="/"><img src={Linkedin} alt="linkedin" /></a>
                         </div>
                         <p className="rights-text">© 2023 Created By Team <b>Debug Entity</b> All Rights Reserved.</p>
                     </div>

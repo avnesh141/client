@@ -43,9 +43,12 @@ const Login_page = () => {
             </div>
           </div>
           <form className="login-form">
-            <input type="email" placeholder="username" onChange={onchange} />
-            <input type="password"  placeholder="password" onChange={onchange} />
-            <button onClick={clickhandler}>login</button>
+            <input type="email" name="email" placeholder="username" onChange={onchange} />
+            <input type="password"  name="password" placeholder="password" onChange={onchange} />
+            <button onClick={(e) => {
+              e.preventDefault();
+              clickhandler();
+            }} >login</button>
             <p className="message">
               Not registered? <Link to="/signup">Create an account</Link>
             </p>
