@@ -1,0 +1,15 @@
+.card{
+    display: inline-block;
+    width:18rem;
+    height: 12rem;
+    background: rgb(33, 184, 230);
+    font-size: large;
+    padding: 1%;
+    margin: 2%;
+}
+
+span{
+    margin: 5px;
+    position: relative;
+    bottom: -5%;
+}
