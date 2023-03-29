@@ -2,11 +2,10 @@ import React from 'react'
 
 function Home() {
   return (
-    <div>
+    <div className='homeContainer'>
         
     </div>
   )
 }
 
 export default Home
-    

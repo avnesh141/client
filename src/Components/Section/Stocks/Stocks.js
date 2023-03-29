@@ -1,13 +1,16 @@
 import React from 'react'
 import './Stocks.css'
 import Chart from './Chart.js'
+import { Navigate, useNavigate } from 'react-router-dom'
 function Stocks() {
+    const navigate = useNavigate();
+    var stockName = 'NIFTY50';
     return (
         <div className='stocks-page'>
             <div className='index-container'>
                 <h3>Index</h3>
                 <div className='indexCards'>
-                    <div className='indexCard'>
+                    <div className='indexCard' onClick={()=>{navigate(`/stockpage`)}}>
                         <h5 className='indexHead'>NIFTY50</h5>
                         <div className='pricesbox'>
                             <div className='prices'>16969</div>
