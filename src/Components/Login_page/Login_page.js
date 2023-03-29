@@ -27,7 +27,7 @@ const Login_page = () => {
      console.log(json);
    if (json.success) {
      localStorage.setItem("token", json.authtoken);
-     navigate("/dashboard");
+     navigate("/trade");
    }
  };
 
