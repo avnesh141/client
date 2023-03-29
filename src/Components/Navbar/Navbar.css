@@ -61,6 +61,11 @@ nav {
     color: white;
     text-decoration: none;
 }
+#logout a {
+    font-size: 1.3rem;
+    color: white;
+    text-decoration: none;
+}
 #login {
     padding:1.2% 4% 1.2% 4%; 
     margin-left: 3%;
@@ -69,6 +74,13 @@ nav {
     border-radius: 12px;
 }
 #signup {
+    padding:1.2% 4% 1.2% 4%; 
+    margin-left: 3%;
+    margin-right: 3%;
+    border: 2px solid white;
+    border-radius: 12px;
+}
+#logout {
     padding:1.2% 4% 1.2% 4%; 
     margin-left: 3%;
     margin-right: 3%;
