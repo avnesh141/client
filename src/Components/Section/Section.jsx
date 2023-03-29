@@ -12,7 +12,7 @@ function Section() {
     console.log(e.target.id);
   }
   return (
-    <div className='container'>
+    <div className='scontainer'>
       <div class="parallax"></div>
       <div className='box'>
       <section className='section-container'>

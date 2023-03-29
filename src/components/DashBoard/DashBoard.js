@@ -1,46 +1,134 @@
-import React, { useEffect, useState } from "react";
-import ComapanyCard from "./ComapanyCard";
-import { stocks } from "./Stocks";
-
-import "./Dashboard.css";
-
-const DashBoard = () => {
-  stocks.map((stock) => {
-    console.log(stock);
-  })
-  const [cryptodata, setdata] = useState([]);
-  const fetchdata = async () => {
-    let url = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false";
-    const data = await fetch(url);
-    const parsedata = await data.json();
-    console.log(parsedata);
-    setdata(parsedata);
+import React from 'react'
+import "./Dashboard.css"
+function Dashboard() {
+  const openbuy = () => {
+    if (document.getElementsByClassName("qtyifClickedbuy")[0].style.display === 'inline-block') {
+      document.getElementsByClassName("qtyifClickedbuy")[0].style.display = 'none'
+    }
+    else {
+      document.getElementsByClassName("qtyifClickedbuy")[0].style.display = 'inline-block';
+      document.getElementsByClassName("qtyifClickedsell")[0].style.display = 'none';
+    }
   }
-  useEffect(() => {
-    fetchdata();
-  }, [])
-  
+  const opensell = () => {
+    if (document.getElementsByClassName("qtyifClickedsell")[0].style.display === 'inline-block') {
+      document.getElementsByClassName("qtyifClickedsell")[0].style.display = 'none'
+    }
+    else {
+      document.getElementsByClassName("qtyifClickedsell")[0].style.display = 'inline-block';
+      document.getElementsByClassName("qtyifClickedbuy")[0].style.display = 'none';
+    }
+  }
   return (
-    <div className="crypto">
-      {cryptodata.map((crypto, index) => {
-        return (
-          <div className="cryptoCard">
-            <ComapanyCard
-              key={index}
-              name={crypto.name}
-              price={crypto.current_price}
-              change={crypto.price_change_24h}
-              changepercent={crypto.price_change_percentage_24h}
-              imgurl={crypto.image}
-            />
+    <div className='Dashboard-page'>
+      <div className='topportContainer'>
+        <div className='portList'>
+          <div className='portCard'>
+            <div className='portContainer'>
+              <div className="comName">
+                <h5>Adani Green</h5>
+                <h6>NET QTY 1</h6>
+              </div>
+              <div className="ltp">
+                <h6>LTP ₹37.10</h6>
+                <h6>P&L ₹13.20</h6>
+              </div>
+              <div className="buy" onClick={(e) => {
+                e.preventDefault();
+                openbuy();
+              }}>
+                Buy
+              </div>
+              <div className="sell" onClick={(e) => {
+                e.preventDefault();
+                opensell();
+              }}>
+                Sell
+              </div>
+            </div>
+            <div className="qtyifClickedbuy">
+              <p>Amount you want to buy:
+                <input type="number" />
+              </p>
+              <p>
+                Net value = Qty X LTP
+              </p>
+              <button>Confirm trans.</button>
+            </div>
+            <div className="qtyifClickedsell">
+              <p>Amount you want to sell:
+                <input type="number" />
+              </p>
+              <p>
+                Net value = Qty X LTP
+              </p>
+              <button>Confirm trans.</button>
+            </div>
           </div>
-        );
-      })}
+        </div>
+        <div className='portList'>
+          <div className='portCard'>
+            <div className='portContainer'>
+              <div className="comName">
+                <h5>Adani Green</h5>
+                <h6>NET QTY 1</h6>
+              </div>
+              <div className="ltp">
+                <h6>LTP ₹37.10</h6>
+                <h6>P&L ₹13.20</h6>
+              </div>
+              <div className="buy">
+                <a href="">Buy</a>
+              </div>
+              <div className="sell">
+                <a href="">Sell</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className='portList'>
+          <div className='portCard'>
+            <div className='portContainer'>
+              <div className="comName">
+                <h5>Adani Green</h5>
+                <h6>NET QTY 1</h6>
+              </div>
+              <div className="ltp">
+                <h6>LTP ₹37.10</h6>
+                <h6>P&L ₹13.20</h6>
+              </div>
+              <div className="buy">
+                <a href="">Buy</a>
+              </div>
+              <div className="sell">
+                <a href="">Sell</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className='portList'>
+          <div className='portCard'>
+            <div className='portContainer'>
+              <div className="comName">
+                <h5>Adani Green</h5>
+                <h6>NET QTY 1</h6>
+              </div>
+              <div className="ltp">
+                <h6>LTP ₹37.10</h6>
+                <h6>P&L ₹13.20</h6>
+              </div>
+              <div className="buy">
+                <a href="">Buy</a>
+              </div>
+              <div className="sell">
+                <a href="">Sell</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  );
+  )
+}
 
-};
-
-
-
-export default DashBoard;
+export default Dashboard
