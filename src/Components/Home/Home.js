@@ -1,11 +1,12 @@
 import React from 'react'
 
-function Bonds() {
+function Home() {
   return (
     <div>
-      
+        
     </div>
   )
 }
 
-export default Bonds
+export default Home
+    

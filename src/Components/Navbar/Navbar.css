@@ -10,7 +10,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: rgb(58, 58, 58);
+    background-color: #282828;
     padding: 10px 20px;
     color: white;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0, 0.06);
@@ -18,10 +18,22 @@ nav {
     width: 100vw;
 }
 
-#nav_list {
+.logoAndOptions{
     display: flex;
     align-items: center;
-    justify-content: center;
+}
+
+.searchAndBtns{
+    display: flex;
+    align-items: center;
+    width: 35%;
+
+}
+
+#nav_list {
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
 }
 
 #nav_list li {
@@ -46,6 +58,8 @@ nav {
 }
 
 #searchbox {
+    padding-top: 10px ;
+    margin: auto 0px;
     height: 2.4rem;
     border-radius: 20px;
     margin-right: 2%;
