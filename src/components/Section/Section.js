@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import './Section.css'
-import Stocks from './Stocks/Stocks.jsx'
-import MutualFunds from './MutualFunds/MutualFunds.jsx'
-import Bonds from './Bonds/Bonds.jsx'
+import Stocks from './Stocks/Stocks'
+import MutualFunds from './MutualFunds/MutualFunds'
+import Bonds from './Bonds/Bonds'
 function Section() {
 
   const [active, setActive] = useState("0");

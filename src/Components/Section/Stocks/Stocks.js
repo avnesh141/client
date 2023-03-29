@@ -1,6 +1,6 @@
 import React from 'react'
 import './Stocks.css'
-import Chart from './Chart.jsx'
+import Chart from './Chart.js'
 function Stocks() {
     return (
         <div className='stocks-page'>
