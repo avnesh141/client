@@ -1,5 +1,5 @@
 .topportContainer {
-    margin-top: 4.5%;
+    margin-top: 16vh;
 }
 
 div {
@@ -77,7 +77,7 @@ div::-webkit-scrollbar {
     height: fit-content;
     width: 96%;
     padding: 10px;
-    box-shadow: 1px 1px 10px 1px rgb(196, 195, 195);
+    box-shadow: 8px 8px 10px 1px rgb(196, 195, 195);
 }
 
 .portContainer {
