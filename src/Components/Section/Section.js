@@ -13,7 +13,11 @@ function Section() {
   }
   return (
     <div className='scontainer'>
+<<<<<<< HEAD:src/Components/Section/Section.jsx
+      <div class="parallax"></div>
+=======
       <div className="parallax"></div>
+>>>>>>> 0a53f9424ab32486c8a97dfe2f4b67b705d11f51:src/Components/Section/Section.js
       <div className='box'>
       <section className='section-container'>
         
