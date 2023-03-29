@@ -1,11 +1,11 @@
 import React from "react";
-import Login from "./components/Login_page/Login_page";
-import Signup from "./components/Signup/Signup";
-import Section from "./components/Section/Section";
-import Footer from "./components/Footer/Footer";
+import Login from "./Components/Login_page/Login_page";
+import Signup from "./Components/Signup/Signup";
+import Section from "./Components/Section/Section";
+import Footer from "./Components/Footer/Footer";
 import { BrowserRouter as Router, Navigate } from "react-router-dom";
 import { Route, Routes } from "react-router-dom";
-import Navbar from "./components/Navbar/Navbar";
+import Navbar from "./Components/Navbar/Navbar";
 const App = () => {
   return (
       <Router>
