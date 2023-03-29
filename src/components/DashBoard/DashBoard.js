@@ -77,31 +77,17 @@ function Dashboard() {
                 <h6>LTP ₹37.10</h6>
                 <h6>P&L ₹13.20</h6>
               </div>
-              <div className="buy">
-                <a href="">Buy</a>
+              <div className="buy" onClick={(e) => {
+                e.preventDefault();
+                openbuy();
+              }}>
+                Buy
               </div>
-              <div className="sell">
-                <a href="">Sell</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className='portList'>
-          <div className='portCard'>
-            <div className='portContainer'>
-              <div className="comName">
-                <h5>Adani Green</h5>
-                <h6>NET QTY 1</h6>
-              </div>
-              <div className="ltp">
-                <h6>LTP ₹37.10</h6>
-                <h6>P&L ₹13.20</h6>
-              </div>
-              <div className="buy">
-                <a href="">Buy</a>
-              </div>
-              <div className="sell">
-                <a href="">Sell</a>
+              <div className="sell" onClick={(e) => {
+                e.preventDefault();
+                opensell();
+              }}>
+                Sell
               </div>
             </div>
           </div>
@@ -117,11 +103,43 @@ function Dashboard() {
                 <h6>LTP ₹37.10</h6>
                 <h6>P&L ₹13.20</h6>
               </div>
-              <div className="buy">
-                <a href="">Buy</a>
+              <div className="buy" onClick={(e) => {
+                e.preventDefault();
+                openbuy();
+              }}>
+                Buy
               </div>
-              <div className="sell">
-                <a href="">Sell</a>
+              <div className="sell" onClick={(e) => {
+                e.preventDefault();
+                opensell();
+              }}>
+                Sell
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className='portList'>
+          <div className='portCard'>
+            <div className='portContainer'>
+              <div className="comName">
+                <h5>Adani Green</h5>
+                <h6>NET QTY 1</h6>
+              </div>
+              <div className="ltp">
+                <h6>LTP ₹37.10</h6>
+                <h6>P&L ₹13.20</h6>
+              </div>
+              <div className="buy" onClick={(e) => {
+                e.preventDefault();
+                openbuy();
+              }}>
+                Buy
+              </div>
+              <div className="sell" onClick={(e) => {
+                e.preventDefault();
+                opensell();
+              }}>
+                Sell
               </div>
             </div>
           </div>
