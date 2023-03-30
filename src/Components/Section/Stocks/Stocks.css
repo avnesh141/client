@@ -31,6 +31,12 @@ div {
   box-shadow: 1px 1px 10px 1px rgb(196, 195, 195);
 }
 
+
+
+.indexHead:hover{
+  cursor: pointer;
+}
+
 .heading {
   padding: 20px 0;
 }
