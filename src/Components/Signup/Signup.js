@@ -1,22 +1,34 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import "./Signup.css";
 
 const Signup = () => {
   const navigate = useNavigate();
+  const [cpass, spass] = useState(null);
   const [credential, setcredential] = useState({
     name: "",
     number: "",
     email: "",
     password: "",
   });
+  const onchangecnf = (e) => {
+    let pass = e.target.value;
+    spass(pass);
+  };
   const onchange = (e) => {
     setcredential({ ...credential, [e.target.name]: e.target.value });
   };
 
   const clickhandler = async () => {
-    console.log("first");
-    console.log(credential);
+    if (credential.number.length < 10) {
+      toast.error("Invalid phone Number");
+      return;
+    }
+    if (credential.password !== cpass) {
+      toast.error("confirm password not matched");
+      return;
+    }
     const response = await fetch(`http://localhost:5000/api/auth/register`, {
       method: "POST",
       headers: {
@@ -27,9 +39,12 @@ const Signup = () => {
     const json = await response.json();
     console.log(json);
     if (json.success) {
+      toast.success("Registered SuccessFully");
       localStorage.setItem("token", json.authtoken);
       console.log(json);
       navigate("/dashboard");
+    } else {
+      toast.error("Something went wrong");
     }
   };
 
@@ -76,7 +91,7 @@ const Signup = () => {
             id="confirm-password"
             name="confirmpassword"
             required
-            onChange={onchange}
+            onChange={onchangecnf}
           />
           <input
             type="submit"

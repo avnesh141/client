@@ -7,8 +7,13 @@ import { BrowserRouter as Router, Navigate } from "react-router-dom";
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./Components/Navbar/Navbar";
 import DashBoard from "./Components/DashBoard/DashBoard";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
+
 const App = () => {
   return (
+    <>
+      <ToastContainer/>
       <Router>
         <Navbar />
         <Routes>
@@ -20,6 +25,7 @@ const App = () => {
         </Routes>
           <Footer />
       </Router>
+    </>
   );
 };
 

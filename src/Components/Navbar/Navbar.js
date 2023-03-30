@@ -1,11 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const onclick = () => {
     console.log("clicke");
     localStorage.removeItem("token");
+    navigate('/login')
   };
 
   return (
@@ -108,12 +110,20 @@ const Navbar = () => {
                 <Link to="/signup">Signup</Link>
               </div>
           )}
-          {localStorage.getItem("token")&& (
-            <div id="logout">
-              <Link to="/login" onClick={onclick}>
-                LogOut
-              </Link>
-            </div>
+          {localStorage.getItem("token") && (
+             <button
+             id="logout"
+                  type="button"
+                  onClick={onclick}
+                  className="buttonn"
+                >
+                  Logout
+                </button>
+            // <div id="logout">
+            //   <Link to="/login" onClick={onclick}>
+            //     LogOut
+            //   </Link>
+            // </div>
           )}
         </div>
       </nav>
