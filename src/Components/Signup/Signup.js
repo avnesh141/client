@@ -37,7 +37,7 @@ const Signup = () => {
     <div id="signupbody">
       <div className="container">
         <form>
-          <h2>Sign Up</h2>
+          <h2 className="signUpHead">Sign Up</ h2>
           <label htmlFor="name">Enter your name:</label>
           <input
             type="text"

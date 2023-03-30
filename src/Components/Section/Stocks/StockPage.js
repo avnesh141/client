@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import Chart from './Chart'
+import './StockPage.css'
 function StockPage() {
   const [compName, setCompName] = useState("");
   setTimeout(() => {
     console.log(localStorage.getItem("selectedCard"));
     setCompName(localStorage.getItem("selectedCard"));
-  }, 2000);
+  }, 500);
   return (
   <div className="stock-page-container">
     <div className="stock-page-box">
@@ -13,7 +14,7 @@ function StockPage() {
     <h1>{compName}</h1>
     <div className="stock-prices">
         <h2 className="stock-price">16923.27</h2>
-        <p className="stock-change">+129.72 (0.76%) </p>
+        <p className="stock-change positive">+129.72 (0.76%) </p>
     </div>
     <div className="stock-chart">
         <Chart />

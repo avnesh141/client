@@ -10,6 +10,23 @@ function Section() {
   const optionsClicked = (e) => {
     setActive(e.target.id);
     console.log(e.target.id);
+    document.getElementById(e.target.id).classList.add('active-page')
+    if(e.target.id==='0'){
+      document.getElementById(e.target.id).classList.add('active-page')
+      document.getElementById('1').classList.remove('active-page')
+      document.getElementById('2').classList.remove('active-page')
+    }
+    else if(e.target.id==='1'){
+      document.getElementById(e.target.id).classList.add('active-page')
+      document.getElementById('0').classList.remove('active-page')
+      document.getElementById('2').classList.remove('active-page')
+    }
+
+    else{
+      document.getElementById(e.target.id).classList.add('active-page')
+      document.getElementById('1').classList.remove('active-page')
+      document.getElementById('0').classList.remove('active-page')
+    }
   }
   return (
     <div className='scontainer'>

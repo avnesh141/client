@@ -1,9 +1,8 @@
-.navbar{
-    padding: 0;
-    margin: 0;
-}
+
 
 nav {
+    padding: 0;
+    margin: 0;
     z-index: 2;
     position: fixed;
     top: 0;
@@ -16,7 +15,11 @@ nav {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0, 0.06);
     font-family: 'Kanit', sans-serif;
     width: 100vw;
+    height: 20vh;
+    
+    
 }
+
 
 .logoAndOptions{
     display: flex;
@@ -28,6 +31,23 @@ nav {
     align-items: center;
     width: 35%;
 
+}
+
+.active-search{
+    display: flex;
+    flex-direction: column;
+}
+
+.autocom-box{
+    /* display: none; */
+    position: absolute;
+    top: 20vh;
+    left: 50vw;
+    overflow-y: scroll;
+    background-color: aliceblue;
+    padding: 20px;
+    border-radius: 5px;
+    
 }
 
 #nav_list {
@@ -89,6 +109,85 @@ nav {
     border: 2px solid white;
     border-radius: 12px;
 }
+/* 
+.searchResults{
+    
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    z-index: 5;
+    background-color: rgb(181, 210, 236);
+    height: 50vh;
+}
+
+.searchResult{
+    background-color: rgb(127, 156, 181);
+    color: black;
+    font-size: 72px;;
+}
 
 
+.wrapper{
+    max-width: 450px;
+    margin: 150px auto;
+  }
+  .wrapper .search-input{
+    background: #fff;
+    width: 100%;
+    border-radius: 5px;
+    position: relative;
+    box-shadow: 0px 1px 5px 3px rgba(0,0,0,0.12);
+  }
+  .search-input input{
+    height: 55px;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    padding: 0 60px 0 20px;
+    font-size: 18px;
+    box-shadow: 0px 1px 5px rgba(0,0,0,0.1);
+  }
+  .search-input.active input{
+    border-radius: 5px 5px 0 0;
+  }
+  .search-input .autocom-box{
+    padding: 0;
+    opacity: 0;
+    pointer-events: none;
+    max-height: 280px;
+    overflow-y: auto;
+  }
+  .search-input.active .autocom-box{
+    padding: 10px 8px;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .autocom-box li{
+    list-style: none;
+    padding: 8px 12px;
+    display: none;
+    width: 100%;
+    cursor: default;
+    border-radius: 3px;
+  }
+  .search-input.active .autocom-box li{
+    display: block;
+  }
+  .autocom-box li:hover{
+    background: #efefef;
+  }
+  .search-input .icon{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    height: 55px;
+    width: 55px;
+    text-align: center;
+    line-height: 55px;
+    font-size: 20px;
+    color: #644bff;
+    cursor: pointer;
+  }
 
+ */
