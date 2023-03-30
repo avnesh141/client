@@ -178,7 +178,9 @@ const Navbar = () => {
                 companies.length!==0 ?
                 companies.map((company)=>{
                   return <div className="stock-name">{company}</div>
-                }):<div>Enter stock symbol</div>
+                }):<div>Enter stock symbol
+                  
+                </div>
               }
             </div>
     </div>
