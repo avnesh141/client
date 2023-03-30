@@ -29,7 +29,7 @@ const Signup = () => {
     if (json.success) {
       localStorage.setItem("token", json.authtoken);
       console.log(json);
-      navigate("/login");
+      navigate("/dashboard");
     }
   };
 

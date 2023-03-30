@@ -133,7 +133,7 @@ function Stocks() {
                 </div>
             </div>
 
-            <Chart/>
+            <Chart name="IBM"/>
         </div>
     )
 }

@@ -30,7 +30,7 @@ function Section() {
   }
   return (
     <div className='scontainer'>
-      <div className="parallax"></div>
+      <div class="parallax"></div>
       <div className='box'>
       <section className='section-container'>
         

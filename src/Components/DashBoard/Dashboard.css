@@ -1,9 +1,17 @@
-.crypto{
-    display: flexbox;
- flex-direction: row;
- justify-content: space-around;
+.topportContainer {
+    margin-top: 16vh;
 }
-.cryptoCard{
-    display: inline-block;
-    margin: 10px;
+
+div {
+    -ms-overflow-style: none;
+    /* for Internet Explorer, Edge */
+    scrollbar-width: none;
+    /* for Firefox */
+    overflow-y: scroll;
 }
+
+div::-webkit-scrollbar {
+    display: none;
+    /* for Chrome, Safari, and Opera */
+}
+

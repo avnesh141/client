@@ -1,22 +1,108 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./Companycard.css"
 
 const ComapanyCard = (props) => {
-  console.log(props.name);
+
+const [data,setdata]=useState({company:`${props.company}`,type:props.type,number:"",price:props.price})
+
+  const Clickhandlersell = async() => {
+     const response = await fetch(`http://localhost:5000/api/invest/sell`, {
+       method: "POST",
+       headers: {
+         "Content-Type": "application/json",
+         authtoken: JSON.stringify(localStorage.getItem("token")),
+       },
+       body: JSON.stringify(data),
+     });
+  }
+
+
+  const Clickhandlerbuy = async () => {
+    console.log(data);
+     const response = await fetch(`http://localhost:5000/api/invest/buy`, {
+       method: "POST",
+       headers: {
+         "Content-Type": "application/json",
+         authtoken: JSON.stringify(localStorage.getItem("token")),
+       },
+       body: JSON.stringify(data),
+     });
+  }
+
+
+  const onchange = (e) => {
+    setdata({...data, [e.target.name]: [e.target.value]})
+  }
+
+  const openbuy = () => {
+   if (
+     document.getElementById(`${props.id}buy`).style.display === "inline-block"
+   ) {
+     document.getElementById(`${props.id}buy`).style.display = "none";
+   } else {
+     document.getElementById(`${props.id}buy`).style.display = "inline-block";
+     document.getElementById(`${props.id}sell`).style.display = "none";
+   }
+ };
+ const opensell = () => {
+   if (
+     document.getElementById(`${props.id}sell`).style.display === "inline-block"
+   ) {
+     document.getElementById(`${props.id}sell`).style.display = "none";
+   } else {
+     document.getElementById(`${props.id}sell`).style.display = "inline-block";
+     document.getElementById(`${props.id}buy`).style.display = "none";
+   }
+ };
+
   return (
-    <div className="card">
-      <img
-        style={{
-          width: "20%",
-          height: "20%",
-        }}
-        src={props.imgurl}
-        alt=""
-      />
-      <h3>{props.name}</h3>
-      <h3>${props.price}</h3>
-      <span>{parseFloat(props.change).toFixed(2)}</span>
-      <span>({parseFloat(props.changepercent).toFixed(2)}%)</span>
+    <div className="portList">
+      <div className="portCard">
+        <div className="portContainer">
+          <div className="comName">
+            <h5>{props.company}</h5>
+            <h6>NET QTY {props.number}</h6>
+          </div>
+          <div className="ltp">
+            <h6>LTP ₹{props.price}</h6>
+            <h6>P&L ₹13.20</h6>
+          </div>
+          <div
+            className="buy"
+            onClick={(e) => {
+              e.preventDefault();
+              openbuy();
+            }}
+          >
+            Buy
+          </div>
+          <div
+            className="sell"
+            onClick={(e) => {
+              e.preventDefault();
+              opensell();
+            }}
+          >
+            Sell
+          </div>
+        </div>
+        <div className="qtyifClickedbuy" id={`${props.id}buy`}>
+          <p>
+            Amount you want to buy:
+            <input type="number" name="number" onChange={onchange} />
+          </p>
+          <p>Net value = Qty X LTP</p>
+          <button onClick={Clickhandlerbuy}>Confirm trans.</button>
+        </div>
+        <div className="qtyifClickedsell" id={`${props.id}sell`}>
+          <p>
+            Amount you want to sell:
+            <input type="number" value={data.number} name="number" onChange={onchange} />
+          </p>
+          <p>Net value = Qty X LTP</p>
+          <button onClick={Clickhandlersell}>Confirm trans.</button>
+        </div>
+      </div>
     </div>
   );
 }

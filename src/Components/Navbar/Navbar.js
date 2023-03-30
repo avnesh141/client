@@ -165,12 +165,23 @@ const Navbar = () => {
               onKeyUp={(e) => searchHandle(e)}
             />
           </div>
-          <div id="login">
-            <Link to="/login">Login</Link>
-          </div>
-          <div id="signup">
-            <Link to="/signup">Signup</Link>
-          </div>
+          {!localStorage.getItem("token") && (
+              <div id="login">
+                <Link to="/login">Login</Link>
+              </div>
+          )}
+          {!localStorage.getItem("token") && (
+              <div id="signup">
+                <Link to="/signup">Signup</Link>
+              </div>
+          )}
+          {localStorage.getItem("token")&& (
+            <div id="logout">
+              <Link to="/login" onClick={onclick}>
+                LogOut
+              </Link>
+            </div>
+          )}
         </div>
       </nav>
       <div id='sugg' class="autocom-box">
@@ -184,7 +195,7 @@ const Navbar = () => {
               }
             </div>
     </div>
-  );
-};
+  )
+}
 
 export default Navbar;

@@ -1,46 +1,45 @@
 import React, { useEffect, useState } from "react";
 import ComapanyCard from "./ComapanyCard";
-import { stocks } from "./Stocks";
-
 import "./Dashboard.css";
+function Dashboard() {
+  const [bought, setbought] = useState([]);
+  const boughtfunc = async () => {
+    const response = await fetch(`http://localhost:5000/api/invest/get`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        authtoken: JSON.stringify(localStorage.getItem("token")),
+      },
+    });
+    let parsedata = await response.json();
+    let finaldata = Object.values(parsedata.stocks);
+    setbought(finaldata);
+    console.log(finaldata);
+    console.log(typeof bought);
+  };
 
-const DashBoard = () => {
-  stocks.map((stock) => {
-    console.log(stock);
-  })
-  const [cryptodata, setdata] = useState([]);
-  const fetchdata = async () => {
-    let url = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false";
-    const data = await fetch(url);
-    const parsedata = await data.json();
-    console.log(parsedata);
-    setdata(parsedata);
-  }
   useEffect(() => {
-    fetchdata();
-  }, [])
-  
+    boughtfunc();
+  },[]);
+
   return (
-    <div className="crypto">
-      {cryptodata.map((crypto, index) => {
-        return (
-          <div className="cryptoCard">
+    <div className="Dashboard-page">
+      <div className="topportContainer">
+        {bought.map((stock, key) => {
+          return (
             <ComapanyCard
-              key={index}
-              name={crypto.name}
-              price={crypto.current_price}
-              change={crypto.price_change_24h}
-              changepercent={crypto.price_change_percentage_24h}
-              imgurl={crypto.image}
+              company={stock.company}
+              number={stock.number}
+              price={stock.price}
+              type={stock.type}
+              id={stock._id}
+              key={key}
             />
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
     </div>
   );
+}
 
-};
-
-
-
-export default DashBoard;
+export default Dashboard;

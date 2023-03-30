@@ -47,7 +47,7 @@ nav {
     background-color: aliceblue;
     padding: 20px;
     border-radius: 5px;
-    
+
 }
 
 #nav_list {
@@ -95,6 +95,11 @@ nav {
     color: white;
     text-decoration: none;
 }
+#logout a {
+    font-size: 1.3rem;
+    color: white;
+    text-decoration: none;
+}
 #login {
     padding:1.2% 4% 1.2% 4%; 
     margin-left: 3%;
@@ -109,21 +114,12 @@ nav {
     border: 2px solid white;
     border-radius: 12px;
 }
-/* 
-.searchResults{
-    
-    display: flex;
-    flex-direction: column;
-    text-decoration: none;
-    z-index: 5;
-    background-color: rgb(181, 210, 236);
-    height: 50vh;
-}
-
-.searchResult{
-    background-color: rgb(127, 156, 181);
-    color: black;
-    font-size: 72px;;
+#logout {
+    padding:1.2% 4% 1.2% 4%; 
+    margin-left: 3%;
+    margin-right: 3%;
+    border: 2px solid white;
+    border-radius: 12px;
 }
 
 
