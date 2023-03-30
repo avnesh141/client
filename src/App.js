@@ -17,10 +17,10 @@ const App = () => {
       <Router>
         <Navbar />
         <Routes>
-          <Route exact path="/trade" element={<Section />} />
+          <Route exact path="/" element={<Section />} />
           <Route exact path="/login" element={<Login />} />
-        <Route exact path="/signup" element={<Signup />} />
-        <Route exact path="/dashboard" element={<DashBoard/>}/>
+          <Route exact path="/signup" element={<Signup />} />
+          <Route exact path="/dashboard" element={<DashBoard />} />
           <Route exact path="*" element={<Navigate to="/" />} />
         </Routes>
           <Footer />

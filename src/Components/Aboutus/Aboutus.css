@@ -1,26 +1,29 @@
-body{
-    background-color: rgb(31, 31, 31);
+#aboutusbody{
+    background-color: rgb(255, 255, 255);
     font-family: 'Kanit', sans-serif;
+    display: flex;
+    justify-content: center;
 }
 #banner{
-    position: absolute;
-    top: 3vw;
+    margin: 120px;display: flex;
+    justify-content: center;
 }
-h2{
+.aboutUsHeading{
     font-size: 2.7rem;
+    color: rgb(12, 177, 177);
 }
 #first{
-    width: 50vw;
-    position: relative;
-    left: 25vw;
-    background-color: #328f8a;
+    width: 80%;
+    background-color: #fcfcfc;
+    margin: 10px;
     padding: 6%;
     border-radius: 70px;
+    box-shadow: 0px 0px 10px 1px black;
     color: rgb(31, 31, 31);
 }
 .text1{
     font-size:2rem ;
 }
-.text{
+.text2{
     font-size:1.5rem;
 }

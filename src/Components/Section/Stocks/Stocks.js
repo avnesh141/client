@@ -1,22 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Stocks.css'
 import Chart from './Chart.js'
+import { Navigate, useNavigate } from 'react-router-dom'
 function Stocks() {
+    const navigate = useNavigate();
+    const cardClicked = (e) => {
+        navigate('/stockpage')
+        localStorage.setItem('selectedCard',e.target.id)
+    }
     return (
         <div className='stocks-page'>
             <div className='index-container'>
                 <h3>Index</h3>
                 <div className='indexCards'>
                     <div className='indexCard'>
-                        <h5 className='indexHead'>NIFTY50</h5>
+                        <h5 className='indexHead' id='NIFTY50' onClick={(e)=>cardClicked(e)}>NIFTY50</h5>
                         <div className='pricesbox'>
                             <div className='prices'>16969</div>
                             <div className='changes' style={{color:'green'}}>+40.59</div>
                         </div>
                     </div>
 
-                    <div className='indexCard'>
-                        <h5 className='indexHead'>SENSEX</h5>
+                    <div className='indexCard'> 
+                        <h5 className='indexHead' id='SENSEX' onClick={(e)=>cardClicked(e)}>SENSEX</h5>
                         <div className='pricesbox'>
                             <div className='prices'>856565</div>
                             <div className='changes' style={{color:'green'}}>+50.2</div>
