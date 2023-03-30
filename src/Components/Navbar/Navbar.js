@@ -1,11 +1,11 @@
 
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import React, {  useState } from "react";
+import React, {  useEffect, useState } from "react";
 import "./Navbar.css";
-
 const Navbar = () => {
 
+  const [click, sclick] = useState(false);
   const navigate = useNavigate();
   const onclick = () => {
     console.log("clicke");
@@ -17,6 +17,7 @@ const Navbar = () => {
   const [active, setActive] = useState(0);
   var comp = [];
   const searchHandle = (e) => {
+    sclick(true);
     if(e.target.value === ''){
       setCompanies([]);
     }
@@ -77,8 +78,17 @@ const Navbar = () => {
       //   }
       // },500)
     console.log(companies);
-    
+    if (!search)
+    {
+      sclick(false);
+      }
   };
+  // useEffect(() => {
+  //  setTimeout(() => {
+  //    sclick(false);
+  //  }, 3000);
+  // })
+  
   return (
     <div>
       <nav className="nav-pc">
@@ -199,7 +209,9 @@ const Navbar = () => {
           )}
         </div>
       </nav>
-      <div id='sugg' class="autocom-box">
+      {
+    click &&
+        <div id='sugg' class="autocom-box">
               {
                 companies.length!==0 ?
                 companies.map((company)=>{
@@ -209,6 +221,7 @@ const Navbar = () => {
                 </div>
               }
             </div>
+                }
     </div>
   )
 }

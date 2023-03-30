@@ -9,11 +9,13 @@ import Navbar from "./Components/Navbar/Navbar";
 import DashBoard from "./Components/DashBoard/DashBoard";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
+import StockPage from "./Components/Section/Stocks/StockPage"
+import AboutUs from "./Components/Aboutus/AboutUs";
 
 const App = () => {
   return (
     <>
-      <ToastContainer/>
+      <ToastContainer />
       <Router>
         <Navbar />
         <Routes>
@@ -21,9 +23,11 @@ const App = () => {
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/signup" element={<Signup />} />
           <Route exact path="/dashboard" element={<DashBoard />} />
+          <Route exact path="/aboutus" element={<AboutUs />} />
+          <Route exact path="/stockpage" element={<StockPage />} />
           <Route exact path="*" element={<Navigate to="/" />} />
         </Routes>
-          <Footer />
+        <Footer />
       </Router>
     </>
   );
