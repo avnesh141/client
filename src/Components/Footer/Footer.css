@@ -9,13 +9,13 @@ body {
 }
 #Footer {
     background: #f1f1f1;
-    padding: 90px 0;
+    /* padding: 40px 0; */
 }
 
 .footer-container {
     max-width: 1300px;
     margin: auto;
-    padding: 0 20px;
+    padding: 8px 8px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -92,6 +92,7 @@ body {
     opacity: .7;
 }
 
+
 .page-content {
     min-height: 100vh;
     font-size: 40px;
@@ -107,7 +108,7 @@ body {
 
     .right-col {
         width: 100%;
-        margin-bottom: 60px;
+        /* margin-bottom: 60px; */
     }
 
     .left-col {
