@@ -12,6 +12,11 @@
     flex-direction: column;
 }
 
+.compNameHead{
+    text-decoration: none;
+    color: rgb(51, 222, 210);
+}
+
 .stock-prices{
     width: 30%;
     display: flex;
@@ -27,4 +32,34 @@
 }
 .negative{
     color:red;
+}
+
+.button-div{
+    display: flex;
+    margin: 20px 0px;
+}
+
+.compHead{
+    margin-right: auto;
+}
+
+.buy-btn{
+    background: rgb(121, 201, 0);
+    color: white;
+    padding: 5px 15px;
+    outline: none;
+    border: none;
+    font-size: 1.4rem;
+    margin-right: 30px;
+    border-radius: 8px;
+}
+
+.sell-btn{
+    background: rgb(255, 26, 26);
+    color: white;
+    border-radius: 8px;
+    padding: 5px 15px;
+    outline: none;
+    border: none;
+    font-size: 1.4rem;
 }

@@ -29,7 +29,7 @@ const Signup = () => {
       toast.error("confirm password not matched");
       return;
     }
-    const response = await fetch(`http://localhost:5000/api/auth/register`, {
+    const response = await fetch(`/api/auth/register`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -50,7 +50,7 @@ const Signup = () => {
 
   return (
     <div id="signupbody">
-      <div className="container">
+      <div className="signup-container">
         <form>
           <h2 className="signUpHead">Sign Up</ h2>
           <label htmlFor="name">Enter your name:</label>

@@ -132,20 +132,108 @@ nav {
 .active-search {
     display: flex;
     flex-direction: column;
+    z-index: 5;
 }
 
-.autocom-box {
-    display: none;
-    position: absolute;
-    top: 20vh;
-    left: 50vw;
-    overflow-y: scroll;
+.autocom-box{
+    /* height: 0; */
+    position: fixed;
+    top: 10vh;
+    left: 65vw;
     background-color: aliceblue;
     /* padding: 20px; */
     border-radius: 5px;
+    z-index: 3;
+    width: 18vw;
+    height: 50vh;
 
+}
+
+.stock-name{
+    display: flex;
+    overflow-x: scroll;
+    border-bottom: solid 1px grey;
+    justify-content: space-between;
+
+}
+
+.stock-name:hover{
+    cursor: pointer;
+}
+
+#nav_list {
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
 }
 
 #nav_list li {
     list-style: none;
+    padding: 0 50px;
+}
+
+.nav_items {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+#main_logo_andname {
+    display: flex;
+    align-items: center;
+}
+
+#companyname {
+    font-size: 2rem;
+    padding-left: 10px;
+}
+
+#searchbox {
+    padding-top: 10px ;
+    margin: auto 0px;
+    height: 2.4rem;
+    border-radius: 20px;
+    margin-right: 2%;
+    outline: none;
+}
+
+#login a {
+    font-size: 1.3rem;
+    color: white;
+    text-decoration: none;
+}
+#signup a {
+    font-size: 1.3rem;
+    color: white;
+    text-decoration: none;
+}
+#login {
+    padding:1.2% 4% 1.2% 4%; 
+    margin-left: 3%;
+    margin-right: 3%;
+    border: 2px solid white;
+    border-radius: 12px;
+}
+#signup {
+    padding:1.2% 4% 1.2% 4%; 
+    margin-left: 3%;
+    margin-right: 3%;
+    border: 2px solid white;
+    border-radius: 12px;
+}
+/* 
+.searchResults{
+    
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    z-index: 5;
+    background-color: rgb(181, 210, 236);
+    height: 50vh;
+}
+
+.searchResult{
+    background-color: rgb(127, 156, 181);
+    color: black;
+    font-size: 72px;;
 }

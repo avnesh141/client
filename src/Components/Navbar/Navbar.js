@@ -1,7 +1,7 @@
 
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import React, {  useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Navbar.css";
 const Navbar = () => {
 
@@ -37,17 +37,27 @@ const Navbar = () => {
         setSearchResults(res.data.bestMatches);
         if(searchResults.length!==0){
           searchResults.forEach(element => {
-            
-            comp.push(element['2. name'])
+            comp.push({name : element['2. name'], symbol : element['1. symbol']})
           });}
            setCompanies(comp);
-           comp = [];
+           comp = []
+           if(e.target.length===0){
+            document.getElementById('sugg').classList.add('display-none');
+            document.getElementById('sugg').classList.remove('display-flex');
+
+            setActive(0);
+          }
+          else{document.getElementById('sugg').classList.add('display-flex');
+          document.getElementById('sugg').classList.remove('display-none');
+            setActive(1);
+          }
            if(active){
             document.getElementById('sugg').classList.add('active-search');
           }
           else{
             document.getElementById('sugg').classList.remove('active-search');
           }
+          console.log(companies)
       });
       
       console.log(searchResults);
@@ -139,6 +149,13 @@ const Navbar = () => {
                   About Us
                 </Link>
               </li>
+              <li>
+                {localStorage.getItem("token") && (
+                  <Link className="nav_items" to="/dashboard">
+                 DashBoard
+                  </Link>
+                )}
+              </li>
             </ul>
           </div>
         </div>
@@ -152,14 +169,14 @@ const Navbar = () => {
             />
           </div>
           {!localStorage.getItem("token") && (
-              <div id="login">
-                <Link to="/login">Login</Link>
-              </div>
+            <div id="login">
+              <Link to="/login">Login</Link>
+            </div>
           )}
           {!localStorage.getItem("token") && (
-              <div id="signup">
-                <Link to="/signup">Signup</Link>
-              </div>
+            <div id="signup">
+              <Link to="/signup">Signup</Link>
+            </div>
           )}
           {localStorage.getItem("token") && (
              <button
@@ -177,17 +194,18 @@ const Navbar = () => {
     click &&
         <div id='sugg' class="autocom-box">
               {
-                companies.length!==0 ?
-                companies.map((company)=>{
-                  return <div className="stock-name">{company}</div>
-                }):<div>Enter stock symbol
-                  
-                </div>
+                  companies.length!==0 ?
+                  companies.map((company)=>{
+                    return <div key={company.symbol} className="stock-name" onClick={(e)=>showStockPage(e)}>{company.symbol}</div>
+                  }):<div style={{display:'none'}}>
+                  </div>
+                
               }
             </div>
                 }
     </div>
-  )
+  );
 }
 
 export default Navbar;
+{/* <div>{company.symbol}</div> */}

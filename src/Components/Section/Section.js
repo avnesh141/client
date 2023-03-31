@@ -30,16 +30,18 @@ function Section() {
   }
   return (
     <div className='scontainer'>
-      <div class="parallax"></div>
+      
+      <div class="parallax-1"></div>
       <div className='box'>
       <section className='section-container'>
         
         <h2 className='heading'>Want to Invest ?</h2>
         <div className='optionsList'>
-          <h3 id="0" className='option' onClick={optionsClicked} >Stocks</h3>
+          <h3 id="0" className='option active-page' onClick={optionsClicked} >Stocks</h3>
           <h3 id="1" className='option' onClick={optionsClicked}>Mutual Funds</h3>
           <h3 id="2" className='option' onClick={optionsClicked}>Crypto</h3>
         </div>
+        
         {(active === "0") &&
           <Stocks />}
         {
@@ -50,6 +52,7 @@ function Section() {
         }
       </section>
       </div>
+      
     </div>
   )
 }

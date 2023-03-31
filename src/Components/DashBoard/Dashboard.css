@@ -1,17 +1,16 @@
 .topportContainer {
     margin-top: 16vh;
+    text-align: center;
 }
 
-div {
-    -ms-overflow-style: none;
-    /* for Internet Explorer, Edge */
-    scrollbar-width: none;
-    /* for Firefox */
-    overflow-y: scroll;
+.profNwall{
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 10px;
 }
-
-div::-webkit-scrollbar {
-    display: none;
-    /* for Chrome, Safari, and Opera */
+.profNwall img{
+    margin: 10px;
 }
-
+.profNwall img:hover{
+   cursor: pointer;
+}
