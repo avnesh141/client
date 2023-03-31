@@ -15,9 +15,9 @@ import DashBoard from "./Components/DashBoard/DashBoard";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import './App.css'
-import MainDashBoard from "./Components/DashBoard/MainDashBoard";
-import Messages from "./Components/DashBoard/Messages";
-import Profile from "./Components/DashBoard/Profile";
+// import MainDashBoard from "./Components/DashBoard/MainDashBoard";
+// import Messages from "./Components/DashBoard/Messages";
+// import Profile from "./Components/DashBoard/Profile";
 import Wallet from "./Components/DashBoard/Wallet";
 
 const App = () => {
@@ -38,13 +38,14 @@ const App = () => {
           <Route exact path="/aboutus" element={<AboutUs />} />
           <Route exact path="/stockpage" element={<StockPage />} />
           <Route exact path="/signup" element={<Signup />} />
-          <Route exact path="/mdashboard" element={<MainDashBoard />} />
+          {/* <Route exact path="/mdashboard" element={<MainDashBoard />} /> */}
           <Route exact path="/dashboard" element={<DashBoard/>} />
           <Route exact path="/aboutus" element={<AboutUs />} />
           <Route exact path="/stockpage" element={<StockPage />} />
-          <Route exact path="/message" element={<Messages/>}/>
-          <Route exact path="/profile" element={<Profile/>}/>
+          {/* <Route exact path="/message" element={<Messages/>}/>
+          <Route exact path="/profile" element={<Profile/>}/> */}
           <Route exact path="/wallet" element={<Wallet/>}/>
+          <Route exact path="/:id" element={<StockPage />}/>
           <Route exact path="*" element={<Navigate to="/" />} />
         </Routes>
         <Footer />
