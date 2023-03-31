@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './Login_page.css';
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from 'react-toastify';
+
 
 const Login_page = () => {
 
@@ -25,10 +27,15 @@ const Login_page = () => {
         console.log("first");
      const json = await response.json();
      console.log(json);
-   if (json.success) {
+      if (json.success) {
+        toast.success("Logged in successfully");
      localStorage.setItem("token", json.authtoken);
      navigate("/trade");
-   }
+      }
+      else
+   {
+     toast.error("Something went wrong")
+     }
  };
 
 
