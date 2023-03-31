@@ -18,7 +18,7 @@ import './App.css'
 // import MainDashBoard from "./Components/DashBoard/MainDashBoard";
 // import Messages from "./Components/DashBoard/Messages";
 // import Profile from "./Components/DashBoard/Profile";
-import Wallet from "./Components/DashBoard/Wallet";
+
 
 const App = () => {
   return (
@@ -44,7 +44,6 @@ const App = () => {
           <Route exact path="/stockpage" element={<StockPage />} />
           {/* <Route exact path="/message" element={<Messages/>}/>
           <Route exact path="/profile" element={<Profile/>}/> */}
-          <Route exact path="/wallet" element={<Wallet/>}/>
           <Route exact path="/:id" element={<StockPage />}/>
           <Route exact path="*" element={<Navigate to="/" />} />
         </Routes>
