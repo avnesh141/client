@@ -7,6 +7,19 @@
     width: 90%;
 }
 
+.buysell input{
+    border:#43bc43 2px solid;
+    border-radius: 20px;
+    /* width: 200px; */
+}
+/* .buysell button{
+    border:#43bc43 2px solid;/
+    border-radius: 20px;
+    color: red;
+    background: #000;
+    width: 200px;
+} */
+
 .buy {
     border: 2px solid #43bc43;
     border-radius: 21px;
@@ -89,13 +102,17 @@
 .qtyifClickedbuy button {
     color: white;
     background-color: grey;
-    border-radius: 5px;
+    /* width: 70px; */
+    /* height: 20px; */
+    border-radius: 15px;
 }
 
 .qtyifClickedsell button {
     color: white;
+    /* width: 70px; */
+    /* height: 20px; */
     background-color: grey;
-    border-radius: 5px;
+    border-radius: 15px;
 }
 
 -webkit-scrollbar {

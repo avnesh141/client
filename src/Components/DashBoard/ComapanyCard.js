@@ -5,8 +5,6 @@ const ComapanyCard = (props) => {
 
 
 
-
-
   const openbuy = () => {
     if (
       document.getElementById(`${props.id}buy`).style.display === "inline-block"
@@ -61,6 +59,7 @@ const [data,setdata]=useState({company:`${props.company}`,type:props.type,number
         },
         body: JSON.stringify(data),
       });
+       const json =await response.json();
       openbuy();
       setdata({
         company: `${props.company}`,
@@ -124,20 +123,32 @@ const [data,setdata]=useState({company:`${props.company}`,type:props.type,number
             Sell
           </div>
         </div>
-        <div className="qtyifClickedbuy" id={`${props.id}buy`}>
+        <div className="qtyifClickedbuy buysell" id={`${props.id}buy`}>
           <p>
             Amount you want to buy:
-            <input type="number" value={data.number} name="number" onChange={onchange} />
+            <input
+              placeholder="Enter here number of shares you want to Buy"
+              type="number"
+              value={data.number}
+              name="number"
+              onChange={onchange}
+            />
           </p>
-          <p>Net value = Qty X LTP</p>
+          <p>Net value ={data.number * props.price}</p>
           <button onClick={confirmbuy}>Confirm trans.</button>
         </div>
-        <div className="qtyifClickedsell" id={`${props.id}sell`}>
+        <div className="qtyifClickedsell buysell" id={`${props.id}sell`}>
           <p>
             Amount you want to sell:
-            <input type="number" value={data.number} name="number" onChange={onchange} />
+            <input
+              placeholder="Enter here number of shares you want to Sell"
+              type="number"
+              value={data.number}
+              name="number"
+              onChange={onchange}
+            />
           </p>
-          <p>Net value = Qty X LTP</p>
+          <p>Net value = {data.number * props.price}</p>
           <button onClick={confirmsell}>Confirm trans.</button>
         </div>
       </div>

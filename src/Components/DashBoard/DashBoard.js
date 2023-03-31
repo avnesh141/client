@@ -58,7 +58,7 @@ function Dashboard() {
   useEffect(() => {
     boughtfunc();
     funcuser();
-  },[]);
+  });
 
 
 
@@ -76,6 +76,14 @@ function Dashboard() {
             src={photo}
             alt=""
           />
+          <h4
+            style={{
+              color: "#43bc43",
+              margin: "10px",
+            }}
+          >
+            Your Balance: ₹ {user.amount}/-
+          </h4>
         </div>
         <h2
           style={{

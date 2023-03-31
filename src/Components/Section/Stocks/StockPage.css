@@ -6,6 +6,13 @@
     justify-content: center;
 }
 
+.buyselldiv{
+    display: flex;
+    align-items: center;
+    /* text-align: center; */
+    flex-direction: row-reverse;
+}
+
 .stock-page-box{
     width: 100%;
     display: flex;
