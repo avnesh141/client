@@ -108,28 +108,28 @@ function StockPage() {
         <div className="stock-icon">
           <img src="https://assets-netstorage.groww.in/stock-assets/logos/NSE.png"></img>
         </div>
-
-        <div className="button-div">
-          <h1 className="compHead">{compData["name"]}</h1>
-          <button
-            className="buy-btn"
-            onClick={(e) => {
-              e.preventDefault();
-              openbuy();
-            }}
-          >
-            Buy
-          </button>
-          <button
-            className="sell-btn"
-            onClick={(e) => {
-              e.preventDefault();
-              opensell();
-            }}
-          >
-            Sell
-          </button>
-        </div>
+        {localStorage.getItem("token") &&
+          <div className="button-div">
+            <h1 className="compHead">{compData["name"]}</h1>
+            <button
+              className="buy-btn"
+              onClick={(e) => {
+                e.preventDefault();
+                openbuy();
+              }}
+            >
+              Buy
+            </button>
+            <button
+              className="sell-btn"
+              onClick={(e) => {
+                e.preventDefault();
+                opensell();
+              }}
+            >
+              Sell
+            </button>
+          </div>}
         <div className="buyselldiv">
           <div className="qtyifClickedbuy buysell" id="buydiv">
             <p>
