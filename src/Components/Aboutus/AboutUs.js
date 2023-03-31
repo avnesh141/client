@@ -5,8 +5,9 @@ const AboutUs = () => {
         <div id='aboutusbody'>
             <div id='banner'>
                 <div id="first">
-                    <h2 className='aboutUsHeading'><u>About Us</u></h2>
-                    <div className='text1'>
+                    <h2 className='aboutUsHeading'>About Us</h2>
+                    <hr></hr>
+                    <div className='text2'>
                         <p>There are trillions of rupees of wealth in India, lying in unproductive assets, losing value over time. We will help millions of Indians do better with their wealth.</p>
                     </div>
                     <div className='text2'>
