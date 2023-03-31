@@ -3,7 +3,7 @@ import "./Companycard.css"
 
 const ComapanyCard = (props) => {
 
-const [data,setdata]=useState({company:`${props.company}`,type:props.type,number:"",price:props.price})
+const [data,setdata]=useState({company:`${props.company}`,type:props.type,number:0,price:props.price})
 
   const Clickhandlersell = async() => {
      const response = await fetch(`http://localhost:5000/api/invest/sell`, {
@@ -16,6 +16,19 @@ const [data,setdata]=useState({company:`${props.company}`,type:props.type,number
      });
   }
 
+  const confirmbuy = () => {
+    if (window.confirm("are u ready for transaction"))
+    {
+      Clickhandlerbuy();
+    }
+}
+
+  const confirmsell = () => {
+    if (window.confirm("are u ready for transaction"))
+    {
+      Clickhandlersell();
+    }
+}
 
   const Clickhandlerbuy = async () => {
     console.log(data);
@@ -92,7 +105,7 @@ const [data,setdata]=useState({company:`${props.company}`,type:props.type,number
             <input type="number" name="number" onChange={onchange} />
           </p>
           <p>Net value = Qty X LTP</p>
-          <button onClick={Clickhandlerbuy}>Confirm trans.</button>
+          <button onClick={confirmbuy}>Confirm trans.</button>
         </div>
         <div className="qtyifClickedsell" id={`${props.id}sell`}>
           <p>
@@ -100,7 +113,7 @@ const [data,setdata]=useState({company:`${props.company}`,type:props.type,number
             <input type="number" value={data.number} name="number" onChange={onchange} />
           </p>
           <p>Net value = Qty X LTP</p>
-          <button onClick={Clickhandlersell}>Confirm trans.</button>
+          <button onClick={confirmsell}>Confirm trans.</button>
         </div>
       </div>
     </div>

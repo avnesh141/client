@@ -1,15 +1,23 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import "./Navbar.css";
-import SearchResults from "./SearchResults";
 
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import React, {  useEffect, useState } from "react";
+import "./Navbar.css";
 const Navbar = () => {
+
+  const [click, sclick] = useState(false);
+  const navigate = useNavigate();
+  const onclick = () => {
+    console.log("clicke");
+    localStorage.removeItem("token");
+    navigate('/login')
+  };
   const [searchResults, setSearchResults] = useState([]);
   const [companies, setCompanies] = useState([]);
   const [active, setActive] = useState(0);
   var comp = [];
   const searchHandle = (e) => {
+    sclick(true);
     if(e.target.value === ''){
       setCompanies([]);
     }
@@ -75,8 +83,17 @@ const Navbar = () => {
       //   }
       // },500)
     console.log(companies);
-    
+    if (!search)
+    {
+      sclick(false);
+      }
   };
+  // useEffect(() => {
+  //  setTimeout(() => {
+  //    sclick(false);
+  //  }, 3000);
+  // })
+  
   return (
     <div>
       <nav className="nav-pc">
@@ -180,16 +197,26 @@ const Navbar = () => {
                 <Link to="/signup">Signup</Link>
               </div>
           )}
-          {localStorage.getItem("token")&& (
-            <div id="logout">
-              <Link to="/login" onClick={onclick}>
-                LogOut
-              </Link>
-            </div>
+          {localStorage.getItem("token") && (
+             <button
+             id="logout"
+                  type="button"
+                  onClick={onclick}
+                  className="buttonn"
+                >
+                  Logout
+                </button>
+            // <div id="logout">
+            //   <Link to="/login" onClick={onclick}>
+            //     LogOut
+            //   </Link>
+            // </div>
           )}
         </div>
       </nav>
-      <div id='sugg' class="autocom-box">
+      {
+    click &&
+        <div id='sugg' class="autocom-box">
               {
                 
                   companies.length!==0 ?
@@ -200,6 +227,7 @@ const Navbar = () => {
                 
               }
             </div>
+                }
     </div>
   )
 }
