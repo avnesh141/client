@@ -15,6 +15,8 @@ import { ToastContainer } from "react-toastify";
 import StockPage from "./Components/Section/Stocks/StockPage"
 import AboutUs from "./Components/Aboutus/AboutUs";
 
+import Wallet from "./Components/Wallet/Wallet"
+
 const App = () => {
   return (
     <>
