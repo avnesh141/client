@@ -50,7 +50,7 @@ const Signup = () => {
 
   return (
     <div id="signupbody">
-      <div className="container">
+      <div className="signup-container">
         <form>
           <h2 className="signUpHead">Sign Up</ h2>
           <label htmlFor="name">Enter your name:</label>
