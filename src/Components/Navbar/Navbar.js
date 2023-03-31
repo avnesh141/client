@@ -1,7 +1,8 @@
 
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import React, {  useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import photo from "./photo.jpg"
 import "./Navbar.css";
 const Navbar = () => {
 
@@ -181,6 +182,27 @@ const Navbar = () => {
                   About Us
                 </Link>
               </li>
+              <li>
+                {localStorage.getItem("token") && (
+                  <Link className="nav_items" to="/mdashboard">
+                 DashBoard
+                  </Link>
+                )}
+              </li>
+              <li>
+                {localStorage.getItem("token") && (
+                  <img
+                  style={{
+                    width: "50px",
+                    height: "50px",
+                    borderRadius: "50px",
+                      backgroundPosition: "center",
+                    }}
+                    src={photo}
+                    alt=""
+                    />
+                    )}
+                    </li>
             </ul>
           </div>
         </div>
@@ -194,24 +216,24 @@ const Navbar = () => {
             />
           </div>
           {!localStorage.getItem("token") && (
-              <div id="login">
-                <Link to="/login">Login</Link>
-              </div>
+            <div id="login">
+              <Link to="/login">Login</Link>
+            </div>
           )}
           {!localStorage.getItem("token") && (
-              <div id="signup">
-                <Link to="/signup">Signup</Link>
-              </div>
+            <div id="signup">
+              <Link to="/signup">Signup</Link>
+            </div>
           )}
           {localStorage.getItem("token") && (
-             <button
-             id="logout"
-                  type="button"
-                  onClick={onclick}
-                  className="buttonn"
-                >
-                  Logout
-                </button>
+            <button
+              id="logout"
+              type="button"
+              onClick={onclick}
+              className="buttonn"
+            >
+              Logout
+            </button>
             // <div id="logout">
             //   <Link to="/login" onClick={onclick}>
             //     LogOut
@@ -234,7 +256,7 @@ const Navbar = () => {
             </div>
                 }
     </div>
-  )
+  );
 }
 
 export default Navbar;
