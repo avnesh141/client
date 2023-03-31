@@ -101,53 +101,52 @@
    display: block;
  } */
 
- ol,
+ /* ol,
  ul {
    list-style: none;
- }
+ } */
 
- blockquote,
+ /* blockquote,
  q {
    quotes: none;
- }
+ } */
 
- blockquote:before,
+ /* blockquote:before,
  blockquote:after,
  q:before,
  q:after {
    content: '';
    content: none;
- }
+ } */
 
- table {
+ /* table {
    border-collapse: collapse;
    border-spacing: 0;
- }
+ } */
 
- a {
+ /* a {
    text-decoration: none !important;
    color: #0B093B;
- }
+ } */
 
- a:hover {
+ /* a:hover {
    color: #7620FF;
- }
+ } */
 
- input:-webkit-autofill {
+ /* input:-webkit-autofill {
    -webkit-box-shadow: 0 0 0 50px #fff inset;
-   /* Change the color to your own background color */
    box-shadow: transparent;
    -webkit-text-fill-color: #fff;
- }
+ } */
 
- body {
+ /* body {
    background: #fff;
    color: #0B093B;
    font-family: 'Khula', sans-serif;
    overflow-x: hidden;
    font-size: 16px;
    font-weight: 400;
- }
+ } */
 
  .land-container {
    width: 100%;
