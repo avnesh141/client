@@ -1,45 +1,135 @@
-
-nav {
+.navbar {
     padding: 0;
     margin: 0;
+}
+
+nav {
     z-index: 2;
     position: fixed;
     top: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #282828;
-    padding: 10px 20px;
+    background-color: rgb(58, 58, 58);
+    padding: 5px 5px;
     color: white;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0, 0.06);
     font-family: 'Kanit', sans-serif;
     width: 100vw;
+    height: 12vh;
 }
 
-
-.logoAndOptions{
+.logoAndOptions {
     display: flex;
     align-items: center;
+    justify-content: center;
+    width: 40vw;
 }
 
-.searchAndBtns{
+#main_logo_andname {
     display: flex;
     align-items: center;
-    width: 35%;
-
+    justify-content: center;
+    width: 15vw;
+    /* margin-right: 5vw; */
 }
 
+#logo-37 {
+    width: 3vw;
+}
 
-/* .active-search{
-    height: 100px;
+#companyname {
+    font-size: 2.9vh;
+    width: 10vw;
+    /* padding-left: 10px; */
+}
+
+#nav_list_div {
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    width: 25vw;
+}
+
+#nav_list {
+    margin: 0 auto;
+    width: 25vw;
     display: flex;
-    flex-direction: column;
-} */
-.display-none{
-    display: none;
-    z-index: -1;
+    align-items: center;
+    justify-content: space-between;
 }
-.display-flex{
+
+@media screen and(max-width:700px) {
+    #nav_list {
+        max-width: 20vw;
+        flex-direction: row;
+    }
+}
+
+.nav_items {
+    color: white;
+    text-decoration: none;
+    font-size: 1.3rem;
+}
+
+#searchbox {
+    /* padding-top: 10px ; */
+    margin: auto 0px;
+    height: 2.4rem;
+    border-radius: 20px;
+    /* margin-right: 2%; */
+}
+
+#login a {
+    font-size: 2.2vh;
+    color: white;
+    text-decoration: none;
+}
+
+#login {
+    padding: 1.2% 4% 1.2% 4%;
+    margin-left: 3%;
+    margin-right: 3%;
+    border: 2px solid white;
+    border-radius: 12px;
+}
+
+#signup a {
+    font-size: 2.2vh;
+    color: white;
+    text-decoration: none;
+}
+
+#logout a {
+    font-size: 1.3rem;
+    color: white;
+    text-decoration: none;
+}
+
+#signup {
+    padding: 1.2% 4% 1.2% 4%;
+    margin-left: 3%;
+    margin-right: 3%;
+    border: 2px solid white;
+    border-radius: 12px;
+}
+
+#logout {
+    padding: 1.2% 4% 1.2% 4%;
+    margin-left: 3%;
+    margin-right: 3%;
+    border: 2px solid white;
+    border-radius: 12px;
+}
+
+.searchAndBtns {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 40vw;
+}
+
+.active-search {
     display: flex;
     flex-direction: column;
     z-index: 5;
@@ -51,7 +141,7 @@ nav {
     top: 10vh;
     left: 65vw;
     background-color: aliceblue;
-    padding: 20px;
+    /* padding: 20px; */
     border-radius: 5px;
     z-index: 3;
     width: 18vw;
@@ -147,69 +237,4 @@ nav {
     color: black;
     font-size: 72px;;
 }
-
-
-.wrapper{
-    max-width: 450px;
-    margin: 150px auto;
-  }
-  .wrapper .search-input{
-    background: #fff;
-    width: 100%;
-    border-radius: 5px;
-    position: relative;
-    box-shadow: 0px 1px 5px 3px rgba(0,0,0,0.12);
-  }
-  .search-input input{
-    height: 55px;
-    width: 100%;
-    outline: none;
-    border: none;
-    border-radius: 5px;
-    padding: 0 60px 0 20px;
-    font-size: 18px;
-    box-shadow: 0px 1px 5px rgba(0,0,0,0.1);
-  }
-  .search-input.active input{
-    border-radius: 5px 5px 0 0;
-  }
-  .search-input .autocom-box{
-    padding: 0;
-    opacity: 0;
-    pointer-events: none;
-    max-height: 280px;
-    overflow-y: auto;
-  }
-  .search-input.active .autocom-box{
-    padding: 10px 8px;
-    opacity: 1;
-    pointer-events: auto;
-  }
-  .autocom-box li{
-    list-style: none;
-    padding: 8px 12px;
-    display: none;
-    width: 100%;
-    cursor: default;
-    border-radius: 3px;
-  }
-  .search-input.active .autocom-box li{
-    display: block;
-  }
-  .autocom-box li:hover{
-    background: #efefef;
-  }
-  .search-input .icon{
-    position: absolute;
-    right: 0px;
-    top: 0px;
-    height: 55px;
-    width: 55px;
-    text-align: center;
-    line-height: 55px;
-    font-size: 20px;
-    color: #644bff;
-    cursor: pointer;
-  }
-
- */
+*/
