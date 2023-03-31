@@ -1,7 +1,7 @@
 
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import "./Navbar.css";
 const Navbar = () => {
 
@@ -22,12 +22,22 @@ const Navbar = () => {
       setCompanies([]);
     }
     var search = e.target.value;
-    if(e.target.value===''){
-      setActive(0);
-    }
-    else{
-      setActive(1);
-    }
+    // if (userData) {
+    //   axios
+    //     .get(
+    //       `https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=${search}&apikey=QHQFTL0K4L4CTGWG`
+    //     )
+    //     .then((res) => {
+    //       console.log(res);
+    //       emptyArray = res.data.bestMatches;
+    //       setSearchResults(res.data.bestMatches);
+    //     });
+    //    //show autocomplete box
+
+    // } else {
+    //   searchWrapper.classList.remove("active"); //hide autocomplete box
+    // }
+    
     axios
       .get(
         `https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=${search}&apikey=QHQFTL0K4L4CTGWG`
@@ -61,13 +71,35 @@ const Navbar = () => {
       });
       
       console.log(searchResults);
+      
+      // setTimeout(()=>{
+      //   if(e.target.value !=='') {
+      //     document.getElementById('sugg').removeChild(div);
+      //     searchResults.map((data)=>{
+      //       var div= document.createElement('div');
+      //       div.innerHTML = data.name;
+      //       document.getElementById('sugg').appendChild(div);
+      //     })
+      //   }
+      // },500)
     console.log(companies);
     if (!search)
     {
       sclick(false);
       }
   };
-  
+  // useEffect(() => {
+  //  setTimeout(() => {
+  //    sclick(false);
+  //  }, 3000);
+  // })
+
+  const showStockPage = (e) => {
+    console.log('clicked')
+    var key = e.target.key;
+    localStorage.setItem('selectedCard',key)
+    navigate('/stockpage')
+  }
   return (
     <div>
       <nav className="nav-pc">
@@ -76,8 +108,8 @@ const Navbar = () => {
             <Link to="/">
               <svg
                 id="logo-37"
-                width="40"
-                height="36"
+                width="42"
+                height="38"
                 viewBox="0 0 42 38"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -179,14 +211,19 @@ const Navbar = () => {
             </div>
           )}
           {localStorage.getItem("token") && (
-             <button
-             id="logout"
-                  type="button"
-                  onClick={onclick}
-                  className="buttonn"
-                >
-                  Logout
-                </button>
+            <button
+              id="logout"
+              type="button"
+              onClick={onclick}
+              className="buttonn"
+            >
+              Logout
+            </button>
+            // <div id="logout">
+            //   <Link to="/login" onClick={onclick}>
+            //     LogOut
+            //   </Link>
+            // </div>
           )}
         </div>
       </nav>
