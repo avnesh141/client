@@ -12,6 +12,7 @@ exports.stocks = [
     change: "1.3200",
     changep: "0.8306%",
   },
+  
   {
     symbol: "AAL",
     name: "American Airlines Group Inc",
@@ -27,6 +28,7 @@ exports.stocks = [
   },
   {
     symbol: "MSFT",
+    name: "Microsoft Corp",
     open: "277.2400",
     high: "280.6300",
     low: "275.2800",
@@ -39,6 +41,7 @@ exports.stocks = [
   },
   {
     symbol: "GOOG",
+    name: 'Alphabet Inc',
     open: "105.7400",
     high: "106.1600",
     low: "104.7400",
@@ -51,6 +54,7 @@ exports.stocks = [
   },
   {
     symbol: "GOOGL",
+    name: 'Alphabet Inc',
     open: "104.9900",
     high: "105.4900",
     low: "103.8400",
@@ -63,6 +67,7 @@ exports.stocks = [
   },
   {
     symbol: "NFLX",
+    name: 'Netflix Inc',
     open: "320.6300",
     high: "331.8300",
     low: "320.6300",
@@ -75,6 +80,7 @@ exports.stocks = [
   },
   {
     symbol: "PCAR",
+    name: 'PACCAR Inc',
     open: "69.2600",
     high: "69.9200",
     low: "68.2900",
@@ -87,6 +93,7 @@ exports.stocks = [
   },
   {
     symbol: "AMZN",
+    name: 'Amazon Inc.',
     open: "98.0650",
     high: "98.3000",
     low: "96.4000",
@@ -99,6 +106,7 @@ exports.stocks = [
   },
   {
     symbol: "TSLA",
+    name: 'Amazon.com Inc',
     open: "191.6500",
     high: "192.3600",
     low: "187.1500",
@@ -111,6 +119,7 @@ exports.stocks = [
   },
   {
     symbol: "XOM",
+    name: 'Exxon Mobil Corp',
     open: "101.4700",
     high: "103.8500",
     low: "100.9132",
@@ -123,6 +132,7 @@ exports.stocks = [
   },
   {
     symbol: "CVX",
+    name: 'Chevron Corp',
     open: "152.1000",
     high: "156.6500",
     low: "151.8300",
@@ -135,6 +145,7 @@ exports.stocks = [
   },
   {
     symbol: "PG",
+    name: 'Procter & Gamble Co-The',
     open: "144.3000",
     high: "146.7600",
     low: "144.3000",
@@ -147,6 +158,7 @@ exports.stocks = [
   },
   {
     symbol: "MA",
+    name: 'Mastercard Inc',
     open: "350.4500",
     high: "352.4200",
     low: "346.3100",
@@ -159,6 +171,7 @@ exports.stocks = [
   },
   {
     symbol: "LLY",
+    name: 'Eli Lilly & Co',
     open: "332.9900",
     high: "336.9300",
     low: "328.7700",
@@ -171,6 +184,7 @@ exports.stocks = [
   },
   {
     symbol: "HD",
+    name: 'Home Depot Inc-The',
     open: "282.5600",
     high: "284.9300",
     low: "280.8300",
@@ -183,6 +197,7 @@ exports.stocks = [
   },
   {
     symbol: "ABBV",
+    name: 'AbbVie Inc',
     open: "155.2800",
     high: "158.4800",
     low: "154.5900",
@@ -195,6 +210,7 @@ exports.stocks = [
   },
   {
     symbol: "NVO",
+    name: 'Novo Nordisk A-S',
     open: "149.9700",
     high: "153.6400",
     low: "149.1600",
@@ -207,6 +223,7 @@ exports.stocks = [
   },
   {
     symbol: "JPM",
+    name: 'JPMorgan Chase & Co',
     open: "125.6300",
     high: "125.6800",
     low: "123.1100",
@@ -219,6 +236,7 @@ exports.stocks = [
   },
   {
     symbol: "WMT",
+    name: 'Walmart Inc',
     open: "141.0100",
     high: "142.4700",
     low: "140.6000",
@@ -231,6 +249,7 @@ exports.stocks = [
   },
   {
     symbol: "META",
+    name: 'Meta Platforms, Inc.',
     open: "205.1800",
     high: "207.5800",
     low: "203.5500",
@@ -243,6 +262,7 @@ exports.stocks = [
   },
   {
     symbol: "NVDA",
+    name: 'NVIDIA Corp',
     open: "270.3100",
     high: "271.6700",
     low: "263.5500",
@@ -255,6 +275,7 @@ exports.stocks = [
   },
   {
     symbol: "TSM",
+    name: 'Taiwan Semiconductor Manufacturing Co Ltd',
     open: "93.9500",
     high: "94.1800",
     low: "92.0900",
@@ -267,6 +288,7 @@ exports.stocks = [
   },
   {
     symbol: "V",
+    name: 'Visa Inc',
     open: "220.6700",
     high: "221.3300",
     low: "218.2500",
@@ -279,6 +301,7 @@ exports.stocks = [
   },
   {
     symbol: "UNH",
+    name: 'UnitedHealth Group Inc',
     open: "468.9800",
     high: "476.8800",
     low: "467.5900",
@@ -291,6 +314,7 @@ exports.stocks = [
   },
   {
     symbol: "MRK",
+    name: 'Merck & Co Inc',
     open: "104.0900",
     high: "105.0100",
     low: "102.4400",
@@ -303,6 +327,7 @@ exports.stocks = [
   },
   {
     symbol: "KO",
+    name: 'Coca-Cola Co-The',
     open: "60.2500",
     high: "61.0150",
     low: "59.9100",
@@ -315,6 +340,7 @@ exports.stocks = [
   },
   {
     symbol: "DHR",
+    name: 'Danaher Corp',
     open: "245.1200",
     high: "248.3500",
     low: "243.1000",
@@ -327,6 +353,7 @@ exports.stocks = [
   },
   {
     symbol: "TM",
+    name: 'Toyota Motor Corp',
     open: "136.0100",
     high: "136.6600",
     low: "135.2000",
@@ -339,6 +366,7 @@ exports.stocks = [
   },
   {
     symbol: "ABT",
+    name: 'Abbott Laboratories',
     open: "97.0400",
     high: "98.0800",
     low: "96.8100",
@@ -351,6 +379,7 @@ exports.stocks = [
   },
   {
     symbol: "LIN",
+    name: 'LIN TV Corp',
     open: "339.5100",
     high: "345.4500",
     low: "337.9500",
@@ -363,6 +392,7 @@ exports.stocks = [
   },
   {
     symbol: "CRM",
+    name: 'salesforce.com Inc',
     open: "186.5000",
     high: "190.3200",
     low: "186.0900",
@@ -375,6 +405,7 @@ exports.stocks = [
   },
   {
     symbol: "MCD",
+    name: 'McDonalds Corp',
     open: "270.3700",
     high: "271.8300",
     low: "268.8400",
@@ -387,6 +418,7 @@ exports.stocks = [
   },
   {
     symbol: "NVS",
+    name: 'Novartis AG',
     open: "83.1900",
     high: "83.6950",
     low: "82.7200",

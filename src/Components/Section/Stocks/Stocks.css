@@ -3,7 +3,7 @@ div {
     scrollbar-width: none; /* for Firefox */
   }
   
-  div::-webkit-scrollbar {
+div::-webkit-scrollbar {
     display: none; /* for Chrome, Safari, and Opera */
   }
 
@@ -38,7 +38,9 @@ div {
 
 .heading {
   padding: 20px 0;
+
 }
+
 
 .gainersList {
   overflow-x: scroll;
@@ -50,7 +52,8 @@ div {
   height: 100%;
 }
 
-.companyDetails{
+.compName:hover{
+  cursor: pointer;
 }
 
 .gainersCard {

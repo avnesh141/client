@@ -37,12 +37,7 @@ const Navbar = () => {
     // } else {
     //   searchWrapper.classList.remove("active"); //hide autocomplete box
     // }
-    if(e.target.value===''){
-      setActive(0);
-    }
-    else{
-      setActive(1);
-    }
+    
     axios
       .get(
         `https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=${search}&apikey=QHQFTL0K4L4CTGWG`
@@ -52,17 +47,27 @@ const Navbar = () => {
         setSearchResults(res.data.bestMatches);
         if(searchResults.length!==0){
           searchResults.forEach(element => {
-            
-            comp.push(element['2. name'])
+            comp.push({name : element['2. name'], symbol : element['1. symbol']})
           });}
            setCompanies(comp);
-           comp = [];
+           comp = []
+           if(e.target.length===0){
+            document.getElementById('sugg').classList.add('display-none');
+            document.getElementById('sugg').classList.remove('display-flex');
+
+            setActive(0);
+          }
+          else{document.getElementById('sugg').classList.add('display-flex');
+          document.getElementById('sugg').classList.remove('display-none');
+            setActive(1);
+          }
            if(active){
             document.getElementById('sugg').classList.add('active-search');
           }
           else{
             document.getElementById('sugg').classList.remove('active-search');
           }
+          console.log(companies)
       });
       
       console.log(searchResults);
@@ -88,7 +93,13 @@ const Navbar = () => {
   //    sclick(false);
   //  }, 3000);
   // })
-  
+
+  const showStockPage = (e) => {
+    console.log('clicked')
+    var key = e.target.key;
+    localStorage.setItem('selectedCard',key)
+    navigate('/stockpage')
+  }
   return (
     <div>
       <nav className="nav-pc">
@@ -216,19 +227,22 @@ const Navbar = () => {
           )}
         </div>
       </nav>
-      {click && (
-        <div id="sugg" class="autocom-box">
-          {companies.length !== 0 ? (
-            companies.map((company) => {
-              return <div className="stock-name">{company}</div>;
-            })
-          ) : (
-            <div>Enter stock symbol</div>
-          )}
-        </div>
-      )}
+      {
+    click &&
+        <div id='sugg' class="autocom-box">
+              {
+                  companies.length!==0 ?
+                  companies.map((company)=>{
+                    return <div key={company.symbol} className="stock-name" onClick={(e)=>showStockPage(e)}>{company.symbol}</div>
+                  }):<div style={{display:'none'}}>
+                  </div>
+                
+              }
+            </div>
+                }
     </div>
   );
 }
 
 export default Navbar;
+{/* <div>{company.symbol}</div> */}
