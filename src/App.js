@@ -6,6 +6,9 @@ import Footer from "./Components/Footer/Footer";
 import { BrowserRouter as Router, Navigate } from "react-router-dom";
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./Components/Navbar/Navbar";
+
+// import Landing from "./Components/Landingpage/Landing"
+// import { Helmet } from "react-helmet";
 import DashBoard from "./Components/DashBoard/DashBoard";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
@@ -17,9 +20,15 @@ const App = () => {
     <>
       <ToastContainer />
       <Router>
+        {/* <Helmet>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Khula:wght@400;600;800&display=swap" rel="stylesheet" />
+      </Helmet> */}
         <Navbar />
         <Routes>
-          <Route exact path="/" element={<Section />} />
+          {/* <Route exact path="/" element={<Landing />} /> */}
+          <Route exact path="/trade" element={<Section />} />
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/signup" element={<Signup />} />
           <Route exact path="/dashboard" element={<DashBoard />} />
