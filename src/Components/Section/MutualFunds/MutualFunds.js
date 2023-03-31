@@ -3,7 +3,7 @@ import React from 'react'
 function MutualFunds() {
   return (
     <div>
-      YO
+      Mutual Funds - SAHI NAHI HAI !
     </div>
   )
 }

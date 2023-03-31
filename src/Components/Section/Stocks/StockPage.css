@@ -19,6 +19,11 @@
     flex-direction: column;
 }
 
+.compNameHead{
+    text-decoration: none;
+    color: rgb(51, 222, 210);
+}
+
 .stock-prices{
     width: 30%;
     display: flex;

@@ -42,10 +42,27 @@ div::-webkit-scrollbar {
 }
 
 
+.parallax-2 {
+  /* The image used */
+  background-image: url("https://img.freepik.com/free-vector/stock-exchange-isometric_1284-22377.jpg?w=2000");
+
+  /* Set a specific height */
+  min-height: 400px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .gainersList {
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
+}
+
+.stocksContainer{
+  margin: 20px 0px;
 }
 
 .companyIcon{
@@ -65,6 +82,7 @@ div::-webkit-scrollbar {
   width: 30%;
   padding: 10px;
   box-shadow: 1px 1px 10px 1px rgb(196, 195, 195);
+  overflow: scroll;
 }
 
 .gainersContainer{
@@ -72,6 +90,11 @@ div::-webkit-scrollbar {
   justify-content: space-around;
   align-items: center;
   height: 100%;
+}
+
+.compNameLink{
+  color: rgb(30, 168, 122);
+  text-decoration: none;
 }
 
 .candlestick-chart{

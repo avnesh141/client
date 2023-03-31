@@ -30,7 +30,7 @@ function Stocks() {
                             <div className='changes' style={{color:'green'}}>+40.59</div>
                         </div>
                     </div>
-
+                    
                     <div className='indexCard'> 
                         <h5 className='indexHead' id='SENSEX'>SENSEX</h5>
                         <div className='pricesbox'>
@@ -49,8 +49,32 @@ function Stocks() {
                 </div>
             </div>
 
+            <hr></hr>
 
-            <div className='topGainersContainer'>
+            <div className='stocksContainer'>
+                <h3 className='heading'>Stocks</h3>
+                <div className='gainersList'>
+                {
+                    stocks.map((stock)=>{
+                        return <div className='gainersCard'>
+                        <div className='gainersContainer'>
+                            <div className='companyDetails'>
+                                <h5 id={stock.symbol} className='compName' ><Link className='compNameLink' to={`/${stock.symbol}`}>{stock.name}</Link></h5>
+                                <h5 className='compPrice'>{stock.price}</h5>
+                                <h6 className='compChange'>{stock.changep}</h6>
+                            </div>
+                        </div>
+                    </div>
+                    })
+                }
+                </div>
+                {/* onClick={(e)=>cardClicked(e)} */}
+            </div>
+            <div class="parallax-2"></div>
+
+            <hr></hr>
+
+            <div className='stocksContainer'>
                 <h3 className='heading'>Top Gainers</h3>
                 <div className='gainersList'>
                 {
@@ -69,9 +93,8 @@ function Stocks() {
                 </div>
                 {/* onClick={(e)=>cardClicked(e)} */}
             </div>
-
-
-            <div className='topLosersContainer'>
+            <hr></hr>
+            <div className='stocksContainer'>
                 <h3 className='heading'>Top Losers</h3>
                 <div className='gainersList'>
                 {
@@ -90,6 +113,7 @@ function Stocks() {
                 </div>
             </div>
             {/* onClick={(e)=>cardClicked(e)} */}
+            <hr></hr>
         </div>
     )
 }
