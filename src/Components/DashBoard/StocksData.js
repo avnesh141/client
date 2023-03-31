@@ -12,6 +12,7 @@ exports.stocks = [
     change: "1.3200",
     changep: "0.8306%",
   },
+  
   {
     symbol: "AAL",
     name: "American Airlines Group Inc",
