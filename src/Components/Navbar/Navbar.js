@@ -29,12 +29,7 @@ const Navbar = () => {
     // } else {
     //   searchWrapper.classList.remove("active"); //hide autocomplete box
     // }
-    if(e.target.value===''){
-      setActive(0);
-    }
-    else{
-      setActive(1);
-    }
+    
     axios
       .get(
         `https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=${search}&apikey=QHQFTL0K4L4CTGWG`
@@ -49,6 +44,16 @@ const Navbar = () => {
           });}
            setCompanies(comp);
            comp = [];
+           if(e.target.length===0){
+            document.getElementById('sugg').classList.add('display-none');
+            document.getElementById('sugg').classList.remove('display-flex');
+
+            setActive(0);
+          }
+          else{document.getElementById('sugg').classList.add('display-flex');
+          document.getElementById('sugg').classList.remove('display-none');
+            setActive(1);
+          }
            if(active){
             document.getElementById('sugg').classList.add('active-search');
           }
@@ -186,12 +191,13 @@ const Navbar = () => {
       </nav>
       <div id='sugg' class="autocom-box">
               {
-                companies.length!==0 ?
-                companies.map((company)=>{
-                  return <div className="stock-name">{company}</div>
-                }):<div>Enter stock symbol
-                  
-                </div>
+                
+                  companies.length!==0 ?
+                  companies.map((company)=>{
+                    return <div className="stock-name">{company}</div>
+                  }):<div style={{display:'none'}}>
+                  </div>
+                
               }
             </div>
     </div>
