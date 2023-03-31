@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from "react";
 import ComapanyCard from "./ComapanyCard";
 import "./Dashboard.css";
+import photo from "./photo.jpg"
+import {useNavigate } from "react-router-dom";
+
 function Dashboard() {
   const [boughtst, setboughtst] = useState([]);
   const [boughtcr, setboughtcr] = useState([]);
   const [invest, setinvest] = useState(0);
   const boughtfunc = async () => {
-    const response = await fetch(`http://localhost:5000/api/invest/get`, {
+    const response = await fetch(`/api/invest/get`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -32,7 +35,7 @@ function Dashboard() {
 
   const [user, setuser] = useState({});
   const funcuser = async () => {
-    const response = await fetch(`http://localhost:5000/api/auth/getuser`, {
+    const response = await fetch(`/api/auth/getuser`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -43,25 +46,56 @@ function Dashboard() {
     setuser(newuser);
     console.log(user);
   };
+
+  const navigate = useNavigate();
+  const onclickwallet = () => {
+    navigate("/wallet");
+}
+
+
+
+
   useEffect(() => {
     boughtfunc();
     funcuser();
-  });
+  },[]);
+
+
 
   return (
     <div className="Dashboard-page">
       <div className="topportContainer">
-        <h2>{user.name}</h2>
-        <div>
+        <div className="profNwall">
+          <img
+            style={{
+              width: "50px",
+              height: "50px",
+              borderRadius: "50px",
+              backgroundPosition: "center",
+            }}
+            src={photo}
+            alt=""
+          />
+        </div>
+        <h2
+          style={{
+            color: "#43bc43",
+          }}
+        >
+          {" "}
+          Hello! {user.name}
+        </h2>
+
+        {/* <div>
           <h3>Amount:{user.amount}</h3>
-        </div>
-        <div>
+        </div> */}
+        {/* <div>
           <h3>Invested:{invest}</h3>
-        </div>
-        {boughtst.length && (
-          <div className="boughtStocks">
-            <h3>Stocks</h3>
-            {boughtst.map((stock, key) => {
+        </div> */}
+        <div className="boughtStocks">
+          <h3 style={{ color: "rgb(12, 177, 177)" }}>Stocks</h3>
+          {boughtst.length ? (
+            boughtst.map((stock, key) => {
               return (
                 // stock.type === "stock" && (
                 <ComapanyCard
@@ -74,13 +108,15 @@ function Dashboard() {
                 />
                 // )
               );
-            })}
-          </div>
-        )}
-        {boughtcr.length && (
-          <div className="boughtCrypto">
-            <h3>Crypto</h3>
-            {boughtcr.map((stock, key) => {
+            })
+          ) : (
+            <h4>Your bought-Stocks Come Here</h4>
+          )}
+        </div>
+        <div className="boughtCrypto">
+          <h3 style={{ color: "rgb(12, 177, 177)" }}>Crypto</h3>
+          {boughtcr.length ? (
+            boughtcr.map((stock, key) => {
               return (
                 // stock.type==="crypto" &&
                 <ComapanyCard
@@ -92,9 +128,11 @@ function Dashboard() {
                   key={key}
                 />
               );
-            })}
-          </div>
-        )}
+            })
+          ) : (
+            <h4>Your bought-Crypto Come Here</h4>
+          )}
+        </div>
       </div>
     </div>
   );

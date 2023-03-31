@@ -33,7 +33,7 @@ const ComapanyCard = (props) => {
 const [data,setdata]=useState({company:`${props.company}`,type:props.type,number:"",price:props.price})
 
   const Clickhandlersell = async() => {
-     const response = await fetch(`http://localhost:5000/api/invest/sell`, {
+     const response = await fetch(`/api/invest/sell`, {
        method: "POST",
        headers: {
          "Content-Type": "application/json",
@@ -53,7 +53,7 @@ const [data,setdata]=useState({company:`${props.company}`,type:props.type,number
 
     const Clickhandlerbuy = async () => {
       console.log(data);
-      const response = await fetch(`http://localhost:5000/api/invest/buy`, {
+      const response = await fetch(`/api/invest/buy`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -71,14 +71,14 @@ const [data,setdata]=useState({company:`${props.company}`,type:props.type,number
     };
 
   const confirmbuy = () => {
-    if (window.confirm("are u ready for transaction"))
+    if (window.confirm("Are You ready for transaction"))
     {
       Clickhandlerbuy();
     }
 }
 
   const confirmsell = () => {
-    if (window.confirm("are u ready for transaction"))
+    if (window.confirm("Are You ready for transaction"))
     {
       Clickhandlersell();
     }

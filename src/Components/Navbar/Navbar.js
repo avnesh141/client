@@ -2,7 +2,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import photo from "./photo.jpg"
 import "./Navbar.css";
 const Navbar = () => {
 
@@ -173,25 +172,11 @@ const Navbar = () => {
               </li>
               <li>
                 {localStorage.getItem("token") && (
-                  <Link className="nav_items" to="/mdashboard">
+                  <Link className="nav_items" to="/dashboard">
                  DashBoard
                   </Link>
                 )}
               </li>
-              <li>
-                {localStorage.getItem("token") && (
-                  <img
-                  style={{
-                    width: "50px",
-                    height: "50px",
-                    borderRadius: "50px",
-                      backgroundPosition: "center",
-                    }}
-                    src={photo}
-                    alt=""
-                    />
-                    )}
-                    </li>
             </ul>
           </div>
         </div>
