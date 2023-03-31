@@ -4,9 +4,9 @@
 	font-family: Arial, sans-serif;
 }
 
-.container {
+.signup-container {
 	max-width: 600px;
-	margin: auto;
+	margin: 100px auto;
 	padding: 50px;
 	background-color: #f2f2f2;
 }
