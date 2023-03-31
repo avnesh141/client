@@ -14,6 +14,10 @@ import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import StockPage from "./Components/Section/Stocks/StockPage"
 import AboutUs from "./Components/Aboutus/AboutUs";
+import MainDashBoard from "./Components/DashBoard/MainDashBoard";
+import Messages from "./Components/DashBoard/Messages";
+import Profile from "./Components/DashBoard/Profile";
+import Wallet from "./Components/DashBoard/Wallet";
 
 const App = () => {
   return (
@@ -31,9 +35,13 @@ const App = () => {
           <Route exact path="/trade" element={<Section />} />
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/signup" element={<Signup />} />
-          <Route exact path="/dashboard" element={<DashBoard />} />
+          <Route exact path="/mdashboard" element={<MainDashBoard />} />
+          <Route exact path="/dashboard" element={<DashBoard/>} />
           <Route exact path="/aboutus" element={<AboutUs />} />
           <Route exact path="/stockpage" element={<StockPage />} />
+          <Route exact path="/message" element={<Messages/>}/>
+          <Route exact path="/profile" element={<Profile/>}/>
+          <Route exact path="/wallet" element={<Wallet/>}/>
           <Route exact path="*" element={<Navigate to="/" />} />
         </Routes>
         <Footer />

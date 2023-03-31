@@ -157,7 +157,7 @@ const Navbar = () => {
           <div id="nav_list_div">
             <ul id="nav_list">
               <li>
-                <Link className="nav_items" to="/stockpage">
+                <Link className="nav_items" to="/">
                   Home
                 </Link>
               </li>
@@ -173,7 +173,7 @@ const Navbar = () => {
               </li>
               <li>
                 {localStorage.getItem("token") && (
-                  <Link className="nav_items" to="/dashboard">
+                  <Link className="nav_items" to="/mdashboard">
                  DashBoard
                   </Link>
                 )}

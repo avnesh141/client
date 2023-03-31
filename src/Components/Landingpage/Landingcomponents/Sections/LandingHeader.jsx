@@ -5,8 +5,7 @@ import FullButton from "../Buttons/FullButton";
 // Assets
 import HeaderImage from "../../Landingasset/img/first.jpg";
 import QuotesIcon from "../../Landingasset/svg/Quotes";
-import Dots from "../../Landingasset/svg/Dots";
-
+import { Link } from "react-router-dom";
 export default function Header() {
   return (
     <Wrapper id="land-home" className="land-container flexSpaceCenter">
@@ -20,7 +19,7 @@ export default function Header() {
           <b>We simplify investments for you</b>
           </HeaderP>
           <BtnWrapper>
-            <FullButton title="Get Started" />
+           <Link to="/trade"> <FullButton title="Get Started" /></Link>
           </BtnWrapper>
         </div>
       </LeftSide>
