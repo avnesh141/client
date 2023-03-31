@@ -4,7 +4,7 @@ import './Stocks.css'
 const CandlestickChart = (props) => {
     const [data, setdata] = useState([]);
     const func = async () => {
-        const url = `https://www.alphavantage.co/query?function=TIME_SERIES_MONTHLY_ADJUSTED&symbol=IBM&interval=5min&outputsize=full&apikey=RQM049WV6AUVS8M1`;
+        const url = `https://www.alphavantage.co/query?function=TIME_SERIES_MONTHLY_ADJUSTED&symbol=${props.name}&interval=5min&outputsize=full&apikey=RQM049WV6AUVS8M1`;
         const response = await fetch(url);
         const parseData = await response.json();
         // TIME_SERIES_INTRADAY

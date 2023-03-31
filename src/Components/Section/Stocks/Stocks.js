@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './Stocks.css'
 import { Navigate, useNavigate } from 'react-router-dom'
 import { stocks } from '../../DashBoard/StocksData';
+import usCompanies from './USStockCompanies';
 function Stocks() {
     const navigate = useNavigate();
     const cardClicked = (e) => {
@@ -68,9 +69,9 @@ function Stocks() {
                         return <div className='gainersCard'>
                         <div className='gainersContainer'>
                             <div className='companyDetails'>
-                                <h5 id={stock.symbol} onClick={(e)=>cardClicked(e)}>{stock.name}</h5>
-                                <h5>{stock.pclose}</h5>
-                                <h6>{stock.changep}</h6>
+                                <h5 id={stock.symbol} className='compName' onClick={(e)=>cardClicked(e)}>{stock.name}</h5>
+                                <h5 className='compPrice'>{stock.price}</h5>
+                                <h6 className='compChange'>{stock.changep}</h6>
                             </div>
                         </div>
                     </div>

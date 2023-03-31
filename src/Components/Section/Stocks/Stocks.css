@@ -39,7 +39,9 @@ div::-webkit-scrollbar {
 
 .heading {
   padding: 20px 0;
+
 }
+
 
 .gainersList {
   overflow-x: scroll;
@@ -51,7 +53,8 @@ div::-webkit-scrollbar {
   height: 100%;
 }
 
-.companyDetails{
+.compName:hover{
+  cursor: pointer;
 }
 
 .gainersCard {

@@ -19,9 +19,25 @@ function StockPage() {
     changep: "0.8306%",
   })
   
-  setTimeout(() => {
+  setTimeout(()=>{
+    
     setCompData(JSON.parse(localStorage.getItem('selectedCard')));
-  }, 1000);
+    let pcchange = document.getElementById('pc-change')
+  let pchange = document.getElementById('p-change')
+  if(pcchange){
+  if(parseInt(compData.changep)>=0){
+    pcchange.style.color='green';
+    pchange.style.color='green';
+  }else{
+    pcchange.style.color='red';
+    pchange.style.color='red';
+  }}
+  },0)
+
+  
+  
+    
+  
   
   return (
   <div className="stock-page-container">
@@ -29,11 +45,11 @@ function StockPage() {
     <div className="stock-icon"><img src="https://assets-netstorage.groww.in/stock-assets/logos/NSE.png"></img></div>
     <h1>{compData['name']}</h1>
     <div className="stock-prices">
-        <h2 className="stock-price">16923.27</h2>
-        <p className="stock-change positive">+129.72 (0.76%) </p>
+        <h2 className="stock-price">{compData['price']}</h2>
+        <p className="stock-change positive"><div id="pc-change">{compData['change']}</div><div id="p-change">({compData['changep']})</div></p>
     </div>
     <div className="stock-chart">
-        <Chart />
+        <Chart name={compData['symbol']}/>
     </div>
     </div>
   </div>)
