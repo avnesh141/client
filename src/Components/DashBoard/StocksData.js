@@ -92,7 +92,7 @@ exports.stocks = [
   },
   {
     symbol: "AMZN",
-    name: '',
+    name: 'Amazon Inc.',
     open: "98.0650",
     high: "98.3000",
     low: "96.4000",
