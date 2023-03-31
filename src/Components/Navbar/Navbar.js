@@ -47,11 +47,10 @@ const Navbar = () => {
         setSearchResults(res.data.bestMatches);
         if(searchResults.length!==0){
           searchResults.forEach(element => {
-            
-            comp.push(element['2. name'])
+            comp.push({name : element['2. name'], symbol : element['1. symbol']})
           });}
            setCompanies(comp);
-           comp = [];
+           comp = []
            if(e.target.length===0){
             document.getElementById('sugg').classList.add('display-none');
             document.getElementById('sugg').classList.remove('display-flex');
@@ -68,6 +67,7 @@ const Navbar = () => {
           else{
             document.getElementById('sugg').classList.remove('active-search');
           }
+          console.log(companies)
       });
       
       console.log(searchResults);
@@ -93,7 +93,13 @@ const Navbar = () => {
   //    sclick(false);
   //  }, 3000);
   // })
-  
+
+  const showStockPage = (e) => {
+    console.log('clicked')
+    var key = e.target.key;
+    localStorage.setItem('selectedCard',key)
+    navigate('/stockpage')
+  }
   return (
     <div>
       <nav className="nav-pc">
@@ -218,10 +224,9 @@ const Navbar = () => {
     click &&
         <div id='sugg' class="autocom-box">
               {
-                
                   companies.length!==0 ?
                   companies.map((company)=>{
-                    return <div className="stock-name">{company}</div>
+                    return <div key={company.symbol} className="stock-name" onClick={(e)=>showStockPage(e)}>{company.symbol}</div>
                   }):<div style={{display:'none'}}>
                   </div>
                 
@@ -233,3 +238,4 @@ const Navbar = () => {
 }
 
 export default Navbar;
+{/* <div>{company.symbol}</div> */}

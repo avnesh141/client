@@ -17,7 +17,7 @@ function StockPage() {
         <p className="stock-change positive">+129.72 (0.76%) </p>
     </div>
     <div className="stock-chart">
-        <Chart />
+        <Chart name={compName}/>
     </div>
     </div>
   </div>)

@@ -47,14 +47,28 @@ nav {
 
 .autocom-box{
     /* height: 0; */
-    position: absolute;
+    position: fixed;
     top: 10vh;
     left: 65vw;
     background-color: aliceblue;
     padding: 20px;
     border-radius: 5px;
     z-index: 3;
-    width: 15vw;
+    width: 18vw;
+    height: 50vh;
+
+}
+
+.stock-name{
+    display: flex;
+    overflow-x: scroll;
+    border-bottom: solid 1px grey;
+    justify-content: space-between;
+
+}
+
+.stock-name:hover{
+    cursor: pointer;
 }
 
 #nav_list {
@@ -90,6 +104,7 @@ nav {
     height: 2.4rem;
     border-radius: 20px;
     margin-right: 2%;
+    outline: none;
 }
 
 #login a {

@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import './Stocks.css'
-import Chart from './Chart.js'
 import { Navigate, useNavigate } from 'react-router-dom'
 function Stocks() {
     const navigate = useNavigate();
@@ -133,7 +132,6 @@ function Stocks() {
                 </div>
             </div>
 
-            <Chart name="IBM"/>
         </div>
     )
 }

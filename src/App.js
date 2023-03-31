@@ -11,8 +11,7 @@ import StockPage from "./Components/Section/Stocks/StockPage";
 import DashBoard from "./Components/DashBoard/DashBoard";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
-import StockPage from "./Components/Section/Stocks/StockPage"
-import AboutUs from "./Components/Aboutus/AboutUs";
+import './App.css'
 
 const App = () => {
   return (
