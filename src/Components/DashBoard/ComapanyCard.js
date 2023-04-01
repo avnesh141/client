@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import "./Companycard.css"
+import { toast } from 'react-toastify';
 
 const ComapanyCard = (props) => {
 
@@ -39,6 +40,8 @@ const [data,setdata]=useState({company:`${props.company}`,type:props.type,number
        },
        body: JSON.stringify(data),
      });
+    const json = await response.json();
+    toast.success(json.message);
     opensell();
     setdata({
         company: `${props.company}`,
@@ -59,7 +62,8 @@ const [data,setdata]=useState({company:`${props.company}`,type:props.type,number
         },
         body: JSON.stringify(data),
       });
-       const json =await response.json();
+      const json = await response.json();
+      toast.success(json.message);
       openbuy();
       setdata({
         company: `${props.company}`,

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./CryptoCard.css";
+import { toast } from "react-toastify";
 
 const ComapanyCard = (props) => {
   const openbuy = () => {
@@ -40,6 +41,8 @@ const ComapanyCard = (props) => {
       },
       body: JSON.stringify(data),
     });
+    const json = await response.json();
+    toast.success(json.message);
     opensell();
     setdata({
       company: `${props.name}`,
@@ -59,6 +62,8 @@ const ComapanyCard = (props) => {
       },
       body: JSON.stringify(data),
     });
+    const json = await response.json();
+    toast.success(json.message);
     openbuy();
     setdata({
       company: `${props.name}`,

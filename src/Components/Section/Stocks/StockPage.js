@@ -1,14 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Chart from "./Chart";
 import "./StockPage.css";
 // import axios from "axios";
 import { stocks } from "../../DashBoard/StocksData";
 import { useParams } from "react-router";
+import { toast } from "react-toastify";
 function StockPage() {
   const { id } = useParams();
   const [compData, setCompData] = useState({});
 
   setTimeout(() => {
+  // const funcst = () => {
     setCompData(stocks.find((item) => item.symbol === id));
 
     let pcchange = document.getElementById("pc-change");
@@ -23,6 +25,11 @@ function StockPage() {
         pchange.style.color = "red";
       }
     }
+  // }
+  // useEffect(() => {
+  //   funcst();
+  // }, [])
+  
   }, 0);
 
   const [data, setdata] = useState({
@@ -50,6 +57,7 @@ function StockPage() {
   };
 
   const Clickhandlersell = async () => {
+    // console.log(data);
     const response = await fetch(`/api/invest/sell`, {
       method: "POST",
       headers: {
@@ -58,6 +66,8 @@ function StockPage() {
       },
       body: JSON.stringify(data),
     });
+    const json = await response.json();
+    toast.success(json.message);
     opensell();
     setdata({
       company: compData.name,
@@ -68,7 +78,7 @@ function StockPage() {
   };
 
   const Clickhandlerbuy = async () => {
-    console.log(data);
+    // console.log(data);
     const response = await fetch(`/api/invest/buy`, {
       method: "POST",
       headers: {
@@ -77,6 +87,9 @@ function StockPage() {
       },
       body: JSON.stringify(data),
     });
+    const json = await response.json();
+    toast.success(json.message);
+    console.log(response);
     openbuy();
     setdata({
       company: compData.name,
@@ -92,6 +105,7 @@ function StockPage() {
     }
   };
 
+  // console.log(data);
   const confirmsell = () => {
     if (window.confirm("Are You ready for transaction")) {
       Clickhandlersell();
@@ -99,7 +113,12 @@ function StockPage() {
   };
 
   const onchange = (e) => {
-    setdata({ ...data, [e.target.name]: [e.target.value] });
+    setdata({
+      company: compData.name,
+      type: "stock",
+      number: e.target.value,
+      price: compData.price,
+    });
   };
 
   return (
@@ -114,7 +133,7 @@ function StockPage() {
             <button
               className="buy-btn"
               onClick={(e) => {
-                e.preventDefault();
+                // e.preventDefault();
                 openbuy();
               }}
             >
